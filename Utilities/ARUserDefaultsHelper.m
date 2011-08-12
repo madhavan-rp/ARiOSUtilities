@@ -1,10 +1,9 @@
-//
-//  ARUserDefaultsHelper.m
-//  Vineloop
-//
-//  Created by Adam Duke on 8/12/11.
-//  Copyright 2011 appRenaissance, LLC. All rights reserved.
-//
+/*  ARUserDefaultsHelper.m
+ *
+ *  Created by Adam Duke on 8/12/11.
+ *  Copyright 2011 appRenaissance, LLC. All rights reserved.
+ *
+ */
 
 #import "ARUserDefaultsHelper.h"
 #import "SynthesizeSingleton.h"

@@ -1,5 +1,4 @@
 /*  ARURLHelper.m
- *  Vineloop
  *
  *  Created by Adam Duke on 7/6/11.
  *  Copyright 2011 appRenaissance, LLC. All rights reserved.
@@ -29,8 +28,7 @@
 			{
 				[str appendString:@"?"];
 			}
-			else
-			if(i > 0)
+			else if(i > 0)
 			{
 				[str appendString:@"&"];
 			}

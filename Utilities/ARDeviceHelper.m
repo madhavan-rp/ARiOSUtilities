@@ -7,8 +7,8 @@
  *  the AudioToolbox framework.
  */
 
-#import <AudioToolbox/AudioServices.h>
 #import "ARDeviceHelper.h"
+#import <AudioToolbox/AudioServices.h>
 
 static BOOL audioSessionInitialized = NO;
 

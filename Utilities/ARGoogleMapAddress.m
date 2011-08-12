@@ -1,5 +1,4 @@
 /*  GoogleMapsAddress.m
- *  Vineloop
  *
  *  Created by Scott Wasserman on 4/13/10.
  *  Copyright 2011 appRenaissance, LLC. All rights reserved.

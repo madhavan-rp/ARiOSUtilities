@@ -6,21 +6,23 @@
  */
 
 #import "ARCredentialHelper.h"
+#import "ARCredentialKeys.h"
 #import "ARUserDefaultsHelper.h"
-#import "VLCredentialKeys.h"
 #import "SynthesizeSingleton.h"
 
 @implementation ARCredentialHelper
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(ARCredentialHelper);
 
-/* saves the given accessKey to the standard NSUserDefaults with the key "CredentialKey_AccessKey" */
+/* saves the given accessKey to the standard NSUserDefaults with the key "CredentialKey_AccessKey"
+ **/
 - (void)saveAccessKey:(NSString *)accessKey
 {
 	[[ARUserDefaultsHelper sharedARUserDefaultsHelper] saveString:accessKey forKey:CredentialKey_AccessKey];
 }
 
-/* saves the given secretKey to the standard NSUserDefaults with the key "CredentialKey_SecretKey" */
+/* saves the given secretKey to the standard NSUserDefaults with the key "CredentialKey_SecretKey"
+ **/
 - (void)saveSecretKey:(NSString *)secretKey
 {
 	[[ARUserDefaultsHelper sharedARUserDefaultsHelper] saveString:secretKey forKey:CredentialKey_SecretKey];

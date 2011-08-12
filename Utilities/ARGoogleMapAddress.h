@@ -1,5 +1,4 @@
 /*  GoogleMapsAddress.h
- *  Vineloop
  *
  *  Created by Scott Wasserman on 4/13/10.
  *  Copyright 2011 appRenaissance, LLC. All rights reserved.
@@ -25,8 +24,8 @@
  * ******************************
  */
 
-#import <MapKit/Mapkit.h>
 #import <Foundation/Foundation.h>
+#import <MapKit/Mapkit.h>
 
 @interface ARGoogleMapsAddress : NSObject {
 	/* local instance variable declarations: */

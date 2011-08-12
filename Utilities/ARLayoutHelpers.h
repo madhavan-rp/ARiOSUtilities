@@ -1,5 +1,4 @@
 /*  LayoutHelpers.h
- *  Vineloop
  *
  *  Created by Scott Wasserman on 4/16/10.
  *  Copyright 2011 appRenaissance, LLC. All rights reserved.
