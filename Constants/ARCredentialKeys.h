@@ -1,4 +1,4 @@
-/*  VLCredentialKeys.h
+/*  ARCredentialKeys.h
  *
  *  Created by Adam Duke on 8/12/11.
  *  Copyright 2011 appRenaissance, LLC. All rights reserved.
