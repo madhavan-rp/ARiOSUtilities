@@ -42,4 +42,9 @@
 	return str;
 }
 
++ (NSData*)formEncodedDataFor:(NSDictionary*)requestParameters
+{
+  NSString *formEncodedParameterString = [ARURLHelper queryStringWithBase:nil parameters:requestParameters prefixed:NO];
+  return [formEncodedParameterString dataUsingEncoding:NSUTF8StringEncoding];
+}
 @end

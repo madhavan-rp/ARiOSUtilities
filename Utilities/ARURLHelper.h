@@ -10,5 +10,5 @@
 @interface ARURLHelper : NSObject {}
 
 + (NSString *)queryStringWithBase:(NSString *)base parameters:(NSDictionary *)params prefixed:(BOOL)prefixed;
-
++ (NSData*)formEncodedDataFor:(NSDictionary*)requestParameters;
 @end
