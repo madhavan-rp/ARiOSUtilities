@@ -102,9 +102,7 @@
 
 - (MKCoordinateRegion)addressRegion
 {
-	MKCoordinateSpan span = {
-		latitudeDelta: 0.1/10, longitudeDelta: 0.1/10
-	};
+	MKCoordinateSpan span = MKCoordinateSpanMake(0.1/10, 0.1/10);
 	return [self addressRegion:span];
 }
 
