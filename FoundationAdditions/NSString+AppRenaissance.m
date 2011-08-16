@@ -10,10 +10,10 @@
 @implementation NSString (htmlAdditions)
 - (NSString *)escapeHTML
 {
-	/* This is pretty weak escaping, but should be enough for our needs */
-	NSString *escaped = [self stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
-	escaped = [escaped stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
-	return escaped;
+    /* This is pretty weak escaping, but should be enough for our needs */
+    NSString *escaped = [self stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
+    escaped = [escaped stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
+    return escaped;
 }
 
 @end
@@ -21,22 +21,22 @@
 @implementation NSString (URLEncoding)
 - (NSString *)URLEncode
 {
-	NSString *URLEncodedString =
-	        (NSString *) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-	                                                             (CFStringRef) self,
-	                                                             NULL,
-	                                                             CFSTR(":/?#[]@!$&'()*+,;="),
-	                                                             kCFStringEncodingUTF8);
-	return [URLEncodedString autorelease];
+    NSString *URLEncodedString =
+        (NSString *) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                             (CFStringRef) self,
+                                                             NULL,
+                                                             CFSTR(":/?#[]@!$&'()*+,;="),
+                                                             kCFStringEncodingUTF8);
+    return [URLEncodedString autorelease];
 }
 
 - (NSString *)URLDecode
 {
-	NSString *URLDecodeedString =
-	        (NSString *) CFURLCreateStringByReplacingPercentEscapes( kCFAllocatorDefault,
-	                                                                 (CFStringRef) self,
-	                                                                 CFSTR(":/?#[]@!$&'()*+,;=") );
-	return [URLDecodeedString autorelease];
+    NSString *URLDecodeedString =
+        (NSString *) CFURLCreateStringByReplacingPercentEscapes( kCFAllocatorDefault,
+                                                                 (CFStringRef) self,
+                                                                 CFSTR(":/?#[]@!$&'()*+,;=") );
+    return [URLDecodeedString autorelease];
 }
 
 @end
@@ -44,13 +44,13 @@
 @implementation NSString (whitespaceAdditions)
 - (NSString *)stringByTrimmingWhitspace
 {
-	return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 - (BOOL)isBlank
 {
-	NSString *trimmed = [self stringByTrimmingWhitspace];
-	return ([trimmed length] == 0);
+    NSString *trimmed = [self stringByTrimmingWhitspace];
+    return ([trimmed length] == 0);
 }
 
 @end

@@ -11,13 +11,13 @@
 
 - (void)dismissKeyboardIfPresent
 {
-	for(UIView *subview in self.subviews)
-	{
-		if([subview isFirstResponder])
-		{
-			[subview resignFirstResponder];
-		}
-	}
+    for(UIView *subview in self.subviews)
+    {
+        if([subview isFirstResponder])
+        {
+            [subview resignFirstResponder];
+        }
+    }
 }
 
 @end
