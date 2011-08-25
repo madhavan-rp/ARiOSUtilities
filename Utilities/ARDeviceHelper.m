@@ -16,42 +16,42 @@ static BOOL audioSessionInitialized = NO;
 
 + (void)doAudioSessionInitialization
 {
-	if(!audioSessionInitialized)
-	{
-		AudioSessionInitialize(NULL, NULL, NULL, NULL);
-		audioSessionInitialized = YES;
-	}
+    if(!audioSessionInitialized)
+    {
+        AudioSessionInitialize(NULL, NULL, NULL, NULL);
+        audioSessionInitialized = YES;
+    }
 }
 
 + (void)setAudioSessionActive
 {
-	AudioSessionSetActiveWithFlags(TRUE, kAudioSessionSetActiveFlag_NotifyOthersOnDeactivation);
+    AudioSessionSetActiveWithFlags(TRUE, kAudioSessionSetActiveFlag_NotifyOthersOnDeactivation);
 }
 
 + (void)setAudioSessionInactive
 {
-	AudioSessionSetActive(FALSE);
+    AudioSessionSetActive(FALSE);
 }
 
 + (BOOL)CFStringRefIsEmpty:(CFStringRef)string
 {
-	/* toll free bridge the cfstringref to an nsstring */
-	NSString *nsString = (NSString *) string;
-	NSUInteger length = [nsString length];
-	return length == 0;
+    /* toll free bridge the cfstringref to an nsstring */
+    NSString *nsString = (NSString *) string;
+    NSUInteger length = [nsString length];
+    return length == 0;
 }
 
 + (BOOL)isInSilentMode
 {
-	[self doAudioSessionInitialization];
-	[self setAudioSessionActive];
-	CFStringRef state = nil;
-	UInt32 propertySize = sizeof(CFStringRef);
-	AudioSessionGetProperty(kAudioSessionProperty_AudioRoute, &propertySize, &state);
-	BOOL isEmpty = [self CFStringRefIsEmpty:state];
-	CFRelease(state);
-	[self setAudioSessionInactive];
-	return isEmpty;
+    [self doAudioSessionInitialization];
+    [self setAudioSessionActive];
+    CFStringRef state = nil;
+    UInt32 propertySize = sizeof(CFStringRef);
+    AudioSessionGetProperty(kAudioSessionProperty_AudioRoute, &propertySize, &state);
+    BOOL isEmpty = [self CFStringRefIsEmpty:state];
+    CFRelease(state);
+    [self setAudioSessionInactive];
+    return isEmpty;
 }
 
 @end

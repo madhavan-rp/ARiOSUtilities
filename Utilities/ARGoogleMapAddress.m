@@ -33,7 +33,7 @@
 
 - (void)moveAnnotation:(CLLocationCoordinate2D)newCoordinate
 {
-	coordinate = newCoordinate;
+    coordinate = newCoordinate;
 }
 
 @end
@@ -48,12 +48,12 @@
  */
 - (id)init
 {
-	if(self = [super init])
-	{
-		/* Use this space to initialize variables */
-		AnnotationList = [NSMutableArray new];
-	}
-	return self;
+    if(self = [super init])
+    {
+        /* Use this space to initialize variables */
+        AnnotationList = [NSMutableArray new];
+    }
+    return self;
 }
 
 /* This is executed right before the object is released
@@ -61,98 +61,96 @@
  */
 - (void)dealloc
 {
-	[Description release];
-	[Street release];
-	[City release];
-	[State release];
-	[Zip release];
-	[super dealloc];
+    [Description release];
+    [Street release];
+    [City release];
+    [State release];
+    [Zip release];
+    [super dealloc];
 }
 
 /* Returns a Google maps link based on the information here */
 - (NSString *)googleHttpLink
 {
-	NSString *street_temp = [NSString stringWithString:self.Street];
-	street_temp = [street_temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *street_temp = [NSString stringWithString:self.Street];
+    street_temp = [street_temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 
-	NSString *city_temp = [NSString stringWithString:self.City];
-	city_temp = [city_temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *city_temp = [NSString stringWithString:self.City];
+    city_temp = [city_temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 
-	NSString *state_temp = [NSString stringWithString:self.State];
-	state_temp = [state_temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *state_temp = [NSString stringWithString:self.State];
+    state_temp = [state_temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 
-	NSString *zip_temp = [NSString stringWithString:self.Zip];
-	zip_temp = [zip_temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *zip_temp = [NSString stringWithString:self.Zip];
+    zip_temp = [zip_temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 
-	NSString *temp =  [NSString stringWithFormat:
-	                   @"http://maps.google.com/?q=%@+%@+%@+%@",
-	                   street_temp,
-	                   city_temp,
-	                   state_temp,
-	                   zip_temp];
+    NSString *temp =  [NSString stringWithFormat:
+                       @"http://maps.google.com/?q=%@+%@+%@+%@",
+                       street_temp,
+                       city_temp,
+                       state_temp,
+                       zip_temp];
 
-	return temp;
+    return temp;
 }
 
 /* Closes the app and opens Google maps with the information here */
 - (void)openGoogleMapsAppWithThisAddress
 {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[self googleHttpLink]]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[self googleHttpLink]]];
 }
 
 - (MKCoordinateRegion)addressRegion
 {
-	MKCoordinateSpan span = {
-		latitudeDelta: 0.1/10, longitudeDelta: 0.1/10
-	};
-	return [self addressRegion:span];
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1/10, 0.1/10);
+    return [self addressRegion:span];
 }
 
 - (MKCoordinateRegion)addressRegion:(MKCoordinateSpan)span
 {
-	CLLocationCoordinate2D coord = [self addressLocation];
-	MKCoordinateRegion region = {
-		coord, span
-	};
-	return region;
+    CLLocationCoordinate2D coord = [self addressLocation];
+    MKCoordinateRegion region = {
+        coord, span
+    };
+    return region;
 }
 
 /* Function to geolocate the address text to a CLLocation Coordinate values */
 - (CLLocationCoordinate2D)addressLocation
 {
-	NSString *completeAddress = [NSString stringWithFormat:@"%@, %@, %@ %@", self.Street, self.City, self.State, self.Zip];
-	NSError *error;
-	NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps/geo?q=%@&output=csv",
-	                       [completeAddress stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-	NSString *locationString = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] encoding:NSUTF8StringEncoding error:&error];
-	NSArray *listItems = [locationString componentsSeparatedByString:@","];
+    NSString *completeAddress = [NSString stringWithFormat:@"%@, %@, %@ %@", self.Street, self.City, self.State, self.Zip];
+    NSError *error;
+    NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps/geo?q=%@&output=csv",
+                           [completeAddress stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSString *locationString = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] encoding:NSUTF8StringEncoding error:&error];
+    NSArray *listItems = [locationString componentsSeparatedByString:@","];
 
-	double latitude = 0.0;
-	double longitude = 0.0;
-	if([listItems count] >= 4 && [[listItems objectAtIndex:0] isEqualToString:@"200"])
-	{
-		latitude = [[listItems objectAtIndex:2] doubleValue];
-		longitude = [[listItems objectAtIndex:3] doubleValue];
-	}
-	else
-	{
-		/* Show error */
-	}
-	CLLocationCoordinate2D location;
-	location.latitude = latitude;
-	location.longitude = longitude;
+    double latitude = 0.0;
+    double longitude = 0.0;
+    if([listItems count] >= 4 && [[listItems objectAtIndex:0] isEqualToString:@"200"])
+    {
+        latitude = [[listItems objectAtIndex:2] doubleValue];
+        longitude = [[listItems objectAtIndex:3] doubleValue];
+    }
+    else
+    {
+        /* Show error */
+    }
+    CLLocationCoordinate2D location;
+    location.latitude = latitude;
+    location.longitude = longitude;
 
-	return location;
+    return location;
 }
 
 - (void)AddToAnnotationList:(CLLocationCoordinate2D)coordinate title:(NSString *)title
 {
-	AnnotationListObject *newAnnotation = [AnnotationListObject new];
-	[newAnnotation setCoordinate:coordinate];
-	[newAnnotation setTitle:title];
-	[newAnnotation setSubtitle:@""];
-	[self.AnnotationList addObject:newAnnotation];
-	[newAnnotation release];
+    AnnotationListObject *newAnnotation = [AnnotationListObject new];
+    [newAnnotation setCoordinate:coordinate];
+    [newAnnotation setTitle:title];
+    [newAnnotation setSubtitle:@""];
+    [self.AnnotationList addObject:newAnnotation];
+    [newAnnotation release];
 }
 
 @end

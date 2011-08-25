@@ -28,13 +28,13 @@
 #import <MapKit/Mapkit.h>
 
 @interface ARGoogleMapsAddress : NSObject {
-	/* local instance variable declarations: */
-	NSMutableArray *AnnotationList;
-	NSString *Description;
-	NSString *Street;
-	NSString *City;
-	NSString *State;
-	NSString *Zip;
+    /* local instance variable declarations: */
+    NSMutableArray *AnnotationList;
+    NSString *Description;
+    NSString *Street;
+    NSString *City;
+    NSString *State;
+    NSString *Zip;
 }
 
 /* property definitions: */
@@ -56,9 +56,9 @@
 @end
 
 @interface AnnotationListObject : NSObject <MKAnnotation> {
-	CLLocationCoordinate2D coordinate;
-	NSString *title;
-	NSString *subtitle;
+    CLLocationCoordinate2D coordinate;
+    NSString *title;
+    NSString *subtitle;
 }
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, retain) NSString *title;
