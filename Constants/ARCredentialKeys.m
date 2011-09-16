@@ -12,3 +12,6 @@ NSString *const CredentialKey_AccessKey = @"CredentialKey_AccessKey";
 
 /*  */
 NSString *const CredentialKey_SecretKey = @"CredentialKey_SecretKey";
+
+/*  */
+NSString *const CredentialKey_UserIdKey = @"CredentialKey_UserIdKey";

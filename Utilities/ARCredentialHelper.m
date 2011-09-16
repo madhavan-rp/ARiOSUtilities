@@ -28,6 +28,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ARCredentialHelper);
     [[ARUserDefaultsHelper sharedARUserDefaultsHelper] saveString:secretKey forKey:CredentialKey_SecretKey];
 }
 
+/* saves the given accessKey to the standard NSUserDefaults with the key "CredentialKey_AccessKey"
+ **/
+- (void)saveUserId:(NSString *)userId
+{
+    [[ARUserDefaultsHelper sharedARUserDefaultsHelper] saveString:userId forKey:CredentialKey_UserIdKey];
+}
+
 /* Returns the value saved in the standard UserDefaults for the key "CredentialKey_AccessKey" */
 - (NSString *)accessKey
 {
@@ -38,6 +45,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ARCredentialHelper);
 - (NSString *)secretKey
 {
     return [[ARUserDefaultsHelper sharedARUserDefaultsHelper] retrieveStringForKey:CredentialKey_SecretKey];
+}
+
+/* Returns the value saved in the standard UserDefaults for the key "CredentialKey_SecretKey" */
+- (NSString *)userId
+{
+    return [[ARUserDefaultsHelper sharedARUserDefaultsHelper] retrieveStringForKey:CredentialKey_UserIdKey];
 }
 
 /* Deletes the saved credentials from NSUserDefaults */

@@ -12,14 +12,20 @@
 /* Saves the value of the given accessKey */
 - (void)saveAccessKey:(NSString *)accessKey;
 
-/* Saves the value of the given accessKey */
+/* Saves the value of the given secretKey */
 - (void)saveSecretKey:(NSString *)secretKey;
+
+/* Saves the value of the given userId */
+- (void)saveUserId:(NSString *)userId;
 
 /* Returns the saved accessKey */
 - (NSString *)accessKey;
 
 /* Returns the saved secretKey */
 - (NSString *)secretKey;
+
+/* Returns the saved userId */
+- (NSString *)userId;
 
 /* Removes any saved credential information */
 - (void)removeCredentials;

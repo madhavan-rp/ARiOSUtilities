@@ -10,3 +10,6 @@ extern NSString *const CredentialKey_AccessKey;
 
 /*  */
 extern NSString *const CredentialKey_SecretKey;
+
+/*  */
+extern NSString *const CredentialKey_UserIdKey;
