@@ -58,6 +58,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ARCredentialHelper);
 {
     [[ARUserDefaultsHelper sharedARUserDefaultsHelper] deleteValueForKey:CredentialKey_AccessKey];
     [[ARUserDefaultsHelper sharedARUserDefaultsHelper] deleteValueForKey:CredentialKey_SecretKey];
+    [[ARUserDefaultsHelper sharedARUserDefaultsHelper] deleteValueForKey:CredentialKey_UserIdKey];
 }
 
 @end
