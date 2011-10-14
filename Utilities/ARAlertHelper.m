@@ -12,6 +12,7 @@
 
 +(void)alertWithMessage:(NSString*)message
 {
+    //TODO: Localize this, it might require a bundle
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                         message:message
                                                        delegate:self
