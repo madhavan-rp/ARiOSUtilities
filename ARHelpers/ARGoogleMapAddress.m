@@ -56,19 +56,6 @@
     return self;
 }
 
-/* This is executed right before the object is released
- * Release variables here
- */
-- (void)dealloc
-{
-    [Description release];
-    [Street release];
-    [City release];
-    [State release];
-    [Zip release];
-    [super dealloc];
-}
-
 /* Returns a Google maps link based on the information here */
 - (NSString *)googleHttpLink
 {
@@ -150,7 +137,6 @@
     [newAnnotation setTitle:title];
     [newAnnotation setSubtitle:@""];
     [self.AnnotationList addObject:newAnnotation];
-    [newAnnotation release];
 }
 
 @end

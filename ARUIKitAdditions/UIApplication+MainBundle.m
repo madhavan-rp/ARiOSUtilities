@@ -5,12 +5,9 @@
  *
  */
 
-#import "ARApplicationHelper.h"
-#import "SynthesizeSingleton.h"
+#import "UIApplication+MainBundle.h"
 
-@implementation ARApplicationHelper
-
-SYNTHESIZE_SINGLETON_FOR_CLASS(ARApplicationHelper)
+@implementation UIApplication (MainBundle)
 
 - (NSString *)bundleValueForKey:(NSString *)key
 {

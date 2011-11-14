@@ -7,9 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ARApplicationHelper : NSObject
+@interface UIApplication (MainBundle)
 
-+ (ARApplicationHelper *)sharedARApplicationHelper;
 - (NSString *)applicationName;
 - (NSString *)applicationVersion;
 

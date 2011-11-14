@@ -36,7 +36,7 @@ static BOOL audioSessionInitialized = NO;
 + (BOOL)CFStringRefIsEmpty:(CFStringRef)string
 {
     /* toll free bridge the cfstringref to an nsstring */
-    NSString *nsString = (NSString *) string;
+    NSString *nsString = (__bridge NSString *) string;
     NSUInteger length = [nsString length];
     return length == 0;
 }

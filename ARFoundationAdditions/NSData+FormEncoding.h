@@ -7,8 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ARURLHelper : NSObject {}
+@interface NSData (FormEncoding)
 
-+ (NSString *)queryStringWithBase:(NSString *)base parameters:(NSDictionary *)params prefixed:(BOOL)prefixed;
 + (NSData *)formEncodedDataFor:(NSDictionary *)requestParameters;
 @end

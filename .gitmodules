@@ -1,0 +1,3 @@
+[submodule "Submodules/GoogleAnalyticsSDKiOS"]
+	path = Submodules/GoogleAnalyticsSDKiOS
+	url = git@github.com:appRenaissance/GoogleAnalyticsSDKiOS.git

@@ -7,58 +7,66 @@
 
 #import "ARCredentialHelper.h"
 #import "ARCredentialKeys.h"
-#import "ARUserDefaultsHelper.h"
-#import "SynthesizeSingleton.h"
+#import "NSUserDefaults+Usability.h"
 
 @implementation ARCredentialHelper
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(ARCredentialHelper);
++ (ARCredentialHelper *)sharedARCredentialHelper
+{
+    static ARCredentialHelper *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[ARCredentialHelper alloc] init];
+        // Do any other initialisation stuff here
+    });
+    return sharedInstance;
+}
 
 /* saves the given accessKey to the standard NSUserDefaults with the key "CredentialKey_AccessKey"
 **/
 - (void)saveAccessKey:(NSString *)accessKey
 {
-    [[ARUserDefaultsHelper sharedARUserDefaultsHelper] saveString:accessKey forKey:CredentialKey_AccessKey];
+    [NSUserDefaults saveString:accessKey forKey:CredentialKey_AccessKey];
 }
 
 /* saves the given secretKey to the standard NSUserDefaults with the key "CredentialKey_SecretKey"
 **/
 - (void)saveSecretKey:(NSString *)secretKey
 {
-    [[ARUserDefaultsHelper sharedARUserDefaultsHelper] saveString:secretKey forKey:CredentialKey_SecretKey];
+    [NSUserDefaults saveString:secretKey forKey:CredentialKey_SecretKey];
 }
 
 /* saves the given accessKey to the standard NSUserDefaults with the key "CredentialKey_AccessKey"
  **/
 - (void)saveUserId:(NSString *)userId
 {
-    [[ARUserDefaultsHelper sharedARUserDefaultsHelper] saveString:userId forKey:CredentialKey_UserIdKey];
+    [NSUserDefaults saveString:userId forKey:CredentialKey_UserIdKey];
 }
 
 /* Returns the value saved in the standard UserDefaults for the key "CredentialKey_AccessKey" */
 - (NSString *)accessKey
 {
-    return [[ARUserDefaultsHelper sharedARUserDefaultsHelper] retrieveStringForKey:CredentialKey_AccessKey];
+    return [NSUserDefaults retrieveStringForKey:CredentialKey_AccessKey];
 }
 
 /* Returns the value saved in the standard UserDefaults for the key "CredentialKey_SecretKey" */
 - (NSString *)secretKey
 {
-    return [[ARUserDefaultsHelper sharedARUserDefaultsHelper] retrieveStringForKey:CredentialKey_SecretKey];
+    return [NSUserDefaults retrieveStringForKey:CredentialKey_SecretKey];
 }
 
 /* Returns the value saved in the standard UserDefaults for the key "CredentialKey_SecretKey" */
 - (NSString *)userId
 {
-    return [[ARUserDefaultsHelper sharedARUserDefaultsHelper] retrieveStringForKey:CredentialKey_UserIdKey];
+    return [NSUserDefaults retrieveStringForKey:CredentialKey_UserIdKey];
 }
 
 /* Deletes the saved credentials from NSUserDefaults */
 - (void)removeCredentials
 {
-    [[ARUserDefaultsHelper sharedARUserDefaultsHelper] deleteValueForKey:CredentialKey_AccessKey];
-    [[ARUserDefaultsHelper sharedARUserDefaultsHelper] deleteValueForKey:CredentialKey_SecretKey];
-    [[ARUserDefaultsHelper sharedARUserDefaultsHelper] deleteValueForKey:CredentialKey_UserIdKey];
+    [NSUserDefaults deleteValueForKey:CredentialKey_AccessKey];
+    [NSUserDefaults deleteValueForKey:CredentialKey_SecretKey];
+    [NSUserDefaults deleteValueForKey:CredentialKey_UserIdKey];
 }
 
 @end

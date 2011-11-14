@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ARAlertHelper : NSObject
+@interface UIAlertView (ShowMessage)
 
-+(void)alertWithMessage:(NSString*)message;
++(void)showAlertWithMessage:(NSString*)message;
 
 @end

@@ -14,6 +14,7 @@
 @interface NSString (URLEncoding)
 - (NSString *)URLEncode;
 - (NSString *)URLDecode;
++ (NSString *)queryStringWithBase:(NSString *)base parameters:(NSDictionary *)params prefixed:(BOOL)prefixed;
 @end
 
 @interface NSString (whitespaceAdditions)

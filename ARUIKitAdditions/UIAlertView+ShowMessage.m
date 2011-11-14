@@ -6,11 +6,11 @@
 //  Copyright 2011 appRenaissance, LLC. All rights reserved.
 //
 
-#import "ARAlertHelper.h"
+#import "UIAlertView+ShowMessage.h"
 
-@implementation ARAlertHelper
+@implementation UIAlertView (ShowMessage)
 
-+(void)alertWithMessage:(NSString*)message
++(void)showAlertWithMessage:(NSString*)message
 {
     //TODO: Localize this, it might require a bundle
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
@@ -19,7 +19,6 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
     [alertView show];
-    [alertView release];
 }
 
 @end

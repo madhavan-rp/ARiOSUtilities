@@ -1,0 +1,950 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5605D9DD147172AD00EC6950 /* ARCredentialKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605D9DA147172AD00EC6950 /* ARCredentialKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605D9DE147172AD00EC6950 /* ARCredentialKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605D9DB147172AD00EC6950 /* ARCredentialKeys.m */; };
+		5605D9F41471742800EC6950 /* NSString+AppRenaissance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605D9F11471731300EC6950 /* NSString+AppRenaissance.m */; };
+		5605D9F51471742F00EC6950 /* NSString+AppRenaissance.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605D9F01471731300EC6950 /* NSString+AppRenaissance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA0F147174E600EC6950 /* UIImage+Alpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA05147174E600EC6950 /* UIImage+Alpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA10147174E600EC6950 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA06147174E600EC6950 /* UIImage+Alpha.m */; };
+		5605DA11147174E600EC6950 /* UIImage+Resize.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA07147174E600EC6950 /* UIImage+Resize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA12147174E600EC6950 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA08147174E600EC6950 /* UIImage+Resize.m */; };
+		5605DA13147174E600EC6950 /* UIImage+RoundedCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA09147174E600EC6950 /* UIImage+RoundedCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA14147174E600EC6950 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA0A147174E600EC6950 /* UIImage+RoundedCorner.m */; };
+		5605DA15147174E600EC6950 /* UIImage+Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA0B147174E600EC6950 /* UIImage+Transform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA16147174E600EC6950 /* UIImage+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA0C147174E600EC6950 /* UIImage+Transform.m */; };
+		5605DA17147174E600EC6950 /* UIView+ResignResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA0D147174E600EC6950 /* UIView+ResignResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA18147174E600EC6950 /* UIView+ResignResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA0E147174E600EC6950 /* UIView+ResignResponder.m */; };
+		5605DA52147176FF00EC6950 /* UIAlertView+ShowMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA50147176FF00EC6950 /* UIAlertView+ShowMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA53147176FF00EC6950 /* UIAlertView+ShowMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA51147176FF00EC6950 /* UIAlertView+ShowMessage.m */; };
+		5605DA56147177DF00EC6950 /* UIApplication+MainBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA54147177DF00EC6950 /* UIApplication+MainBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA57147177DF00EC6950 /* UIApplication+MainBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA55147177DF00EC6950 /* UIApplication+MainBundle.m */; };
+		5605DA5C1471792B00EC6950 /* NSUserDefaults+Usability.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA5A1471792B00EC6950 /* NSUserDefaults+Usability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA5D1471792B00EC6950 /* NSUserDefaults+Usability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA5B1471792B00EC6950 /* NSUserDefaults+Usability.m */; };
+		5605DA6014717DDF00EC6950 /* NSData+FormEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA5E14717DDF00EC6950 /* NSData+FormEncoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA6114717DDF00EC6950 /* NSData+FormEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA5F14717DDF00EC6950 /* NSData+FormEncoding.m */; };
+		5605DA731471800800EC6950 /* ARGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA711471800800EC6950 /* ARGoogleAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA741471800800EC6950 /* ARGoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA721471800800EC6950 /* ARGoogleAnalytics.m */; };
+		5605DA78147180F700EC6950 /* GANTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA76147180F700EC6950 /* GANTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DA79147180F700EC6950 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA77147180F700EC6950 /* libGoogleAnalytics.a */; };
+		5605DA85147186EC00EC6950 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA84147186EB00EC6950 /* Foundation.framework */; };
+		5605DA86147186FE00EC6950 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA84147186EB00EC6950 /* Foundation.framework */; };
+		5605DA881471871300EC6950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA871471871300EC6950 /* UIKit.framework */; };
+		5605DA891471872B00EC6950 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA84147186EB00EC6950 /* Foundation.framework */; };
+		5605DA8A1471872B00EC6950 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA871471871300EC6950 /* UIKit.framework */; };
+		5605DA8B1471873100EC6950 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA84147186EB00EC6950 /* Foundation.framework */; };
+		5605DA8D1471874800EC6950 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA8C1471874800EC6950 /* MapKit.framework */; };
+		5605DA8F1471875900EC6950 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605DA8E1471875900EC6950 /* AudioToolbox.framework */; };
+		5605DAA21471893600EC6950 /* ARColorHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA981471893600EC6950 /* ARColorHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DAA31471893600EC6950 /* ARColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA991471893600EC6950 /* ARColorHelper.m */; };
+		5605DAA41471893600EC6950 /* ARCredentialHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA9A1471893600EC6950 /* ARCredentialHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DAA51471893600EC6950 /* ARCredentialHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA9B1471893600EC6950 /* ARCredentialHelper.m */; };
+		5605DAA61471893600EC6950 /* ARDeviceHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA9C1471893600EC6950 /* ARDeviceHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DAA71471893600EC6950 /* ARDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA9D1471893600EC6950 /* ARDeviceHelper.m */; };
+		5605DAA81471893600EC6950 /* ARGoogleMapAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DA9E1471893600EC6950 /* ARGoogleMapAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DAA91471893600EC6950 /* ARGoogleMapAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA9F1471893600EC6950 /* ARGoogleMapAddress.m */; };
+		5605DAAA1471893600EC6950 /* ARLayoutHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DAA01471893600EC6950 /* ARLayoutHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5605DAAB1471893600EC6950 /* ARLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DAA11471893600EC6950 /* ARLayoutHelpers.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5605DA901471879900EC6950 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5605D9BD1471721100EC6950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5605D9C71471723800EC6950;
+			remoteInfo = ARiOSUtilitiesConstants;
+		};
+		5605DA92147187A100EC6950 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5605D9BD1471721100EC6950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5605D9E4147172DE00EC6950;
+			remoteInfo = ARFoundationAdditions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5605D9C81471723800EC6950 /* libARiOSUtilitiesConstants.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARiOSUtilitiesConstants.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5605D9CF1471723800EC6950 /* ARiOSUtilitiesConstants-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARiOSUtilitiesConstants-Prefix.pch"; sourceTree = "<group>"; };
+		5605D9DA147172AD00EC6950 /* ARCredentialKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCredentialKeys.h; sourceTree = "<group>"; };
+		5605D9DB147172AD00EC6950 /* ARCredentialKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCredentialKeys.m; sourceTree = "<group>"; };
+		5605D9E5147172DE00EC6950 /* libARFoundationAdditions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARFoundationAdditions.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5605D9E9147172DE00EC6950 /* ARFoundationAdditions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARFoundationAdditions-Prefix.pch"; sourceTree = "<group>"; };
+		5605D9F01471731300EC6950 /* NSString+AppRenaissance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AppRenaissance.h"; sourceTree = "<group>"; };
+		5605D9F11471731300EC6950 /* NSString+AppRenaissance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AppRenaissance.m"; sourceTree = "<group>"; };
+		5605D9FA147174AE00EC6950 /* libARUIKitAdditions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARUIKitAdditions.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5605D9FE147174AE00EC6950 /* ARUIKitAdditions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARUIKitAdditions-Prefix.pch"; sourceTree = "<group>"; };
+		5605DA05147174E600EC6950 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		5605DA06147174E600EC6950 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		5605DA07147174E600EC6950 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		5605DA08147174E600EC6950 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		5605DA09147174E600EC6950 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		5605DA0A147174E600EC6950 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		5605DA0B147174E600EC6950 /* UIImage+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Transform.h"; sourceTree = "<group>"; };
+		5605DA0C147174E600EC6950 /* UIImage+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Transform.m"; sourceTree = "<group>"; };
+		5605DA0D147174E600EC6950 /* UIView+ResignResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ResignResponder.h"; sourceTree = "<group>"; };
+		5605DA0E147174E600EC6950 /* UIView+ResignResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ResignResponder.m"; sourceTree = "<group>"; };
+		5605DA1D1471769500EC6950 /* libARHelpers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARHelpers.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5605DA211471769600EC6950 /* ARHelpers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARHelpers-Prefix.pch"; sourceTree = "<group>"; };
+		5605DA50147176FF00EC6950 /* UIAlertView+ShowMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+ShowMessage.h"; sourceTree = "<group>"; };
+		5605DA51147176FF00EC6950 /* UIAlertView+ShowMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+ShowMessage.m"; sourceTree = "<group>"; };
+		5605DA54147177DF00EC6950 /* UIApplication+MainBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+MainBundle.h"; sourceTree = "<group>"; };
+		5605DA55147177DF00EC6950 /* UIApplication+MainBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+MainBundle.m"; sourceTree = "<group>"; };
+		5605DA5A1471792B00EC6950 /* NSUserDefaults+Usability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Usability.h"; sourceTree = "<group>"; };
+		5605DA5B1471792B00EC6950 /* NSUserDefaults+Usability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Usability.m"; sourceTree = "<group>"; };
+		5605DA5E14717DDF00EC6950 /* NSData+FormEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FormEncoding.h"; sourceTree = "<group>"; };
+		5605DA5F14717DDF00EC6950 /* NSData+FormEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FormEncoding.m"; sourceTree = "<group>"; };
+		5605DA6614717FD400EC6950 /* libARGoogleAnaylitics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARGoogleAnaylitics.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5605DA6A14717FD400EC6950 /* ARGoogleAnaylitics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARGoogleAnaylitics-Prefix.pch"; sourceTree = "<group>"; };
+		5605DA711471800800EC6950 /* ARGoogleAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGoogleAnalytics.h; sourceTree = "<group>"; };
+		5605DA721471800800EC6950 /* ARGoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARGoogleAnalytics.m; sourceTree = "<group>"; };
+		5605DA76147180F700EC6950 /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = ../Submodules/GoogleAnalyticsSDKiOS/Library/GANTracker.h; sourceTree = "<group>"; };
+		5605DA77147180F700EC6950 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = ../Submodules/GoogleAnalyticsSDKiOS/Library/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		5605DA84147186EB00EC6950 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5605DA871471871300EC6950 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5605DA8C1471874800EC6950 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		5605DA8E1471875900EC6950 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		5605DA981471893600EC6950 /* ARColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARColorHelper.h; sourceTree = "<group>"; };
+		5605DA991471893600EC6950 /* ARColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARColorHelper.m; sourceTree = "<group>"; };
+		5605DA9A1471893600EC6950 /* ARCredentialHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCredentialHelper.h; sourceTree = "<group>"; };
+		5605DA9B1471893600EC6950 /* ARCredentialHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCredentialHelper.m; sourceTree = "<group>"; };
+		5605DA9C1471893600EC6950 /* ARDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDeviceHelper.h; sourceTree = "<group>"; };
+		5605DA9D1471893600EC6950 /* ARDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDeviceHelper.m; sourceTree = "<group>"; };
+		5605DA9E1471893600EC6950 /* ARGoogleMapAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGoogleMapAddress.h; sourceTree = "<group>"; };
+		5605DA9F1471893600EC6950 /* ARGoogleMapAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARGoogleMapAddress.m; sourceTree = "<group>"; };
+		5605DAA01471893600EC6950 /* ARLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLayoutHelpers.h; sourceTree = "<group>"; };
+		5605DAA11471893600EC6950 /* ARLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLayoutHelpers.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5605D9C51471723800EC6950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA85147186EC00EC6950 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605D9E2147172DE00EC6950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA86147186FE00EC6950 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605D9F7147174AE00EC6950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA881471871300EC6950 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605DA1A1471769500EC6950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA8F1471875900EC6950 /* AudioToolbox.framework in Frameworks */,
+				5605DA8D1471874800EC6950 /* MapKit.framework in Frameworks */,
+				5605DA891471872B00EC6950 /* Foundation.framework in Frameworks */,
+				5605DA8A1471872B00EC6950 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605DA6314717FD400EC6950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA8B1471873100EC6950 /* Foundation.framework in Frameworks */,
+				5605DA79147180F700EC6950 /* libGoogleAnalytics.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5605D9BB1471721100EC6950 = {
+			isa = PBXGroup;
+			children = (
+				5605D9CD1471723800EC6950 /* ARiOSUtilitiesConstants */,
+				5605D9E7147172DE00EC6950 /* ARFoundationAdditions */,
+				5605D9FC147174AE00EC6950 /* ARUIKitAdditions */,
+				5605DA1F1471769500EC6950 /* ARHelpers */,
+				5605DA6814717FD400EC6950 /* ARGoogleAnaylitics */,
+				5605D9CA1471723800EC6950 /* Frameworks */,
+				5605D9C91471723800EC6950 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5605D9C91471723800EC6950 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5605D9C81471723800EC6950 /* libARiOSUtilitiesConstants.a */,
+				5605D9E5147172DE00EC6950 /* libARFoundationAdditions.a */,
+				5605D9FA147174AE00EC6950 /* libARUIKitAdditions.a */,
+				5605DA1D1471769500EC6950 /* libARHelpers.a */,
+				5605DA6614717FD400EC6950 /* libARGoogleAnaylitics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5605D9CA1471723800EC6950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5605DA8E1471875900EC6950 /* AudioToolbox.framework */,
+				5605DA84147186EB00EC6950 /* Foundation.framework */,
+				5605DA8C1471874800EC6950 /* MapKit.framework */,
+				5605DA871471871300EC6950 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5605D9CD1471723800EC6950 /* ARiOSUtilitiesConstants */ = {
+			isa = PBXGroup;
+			children = (
+				5605D9DA147172AD00EC6950 /* ARCredentialKeys.h */,
+				5605D9DB147172AD00EC6950 /* ARCredentialKeys.m */,
+				5605D9CE1471723800EC6950 /* Supporting Files */,
+			);
+			path = ARiOSUtilitiesConstants;
+			sourceTree = "<group>";
+		};
+		5605D9CE1471723800EC6950 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5605D9CF1471723800EC6950 /* ARiOSUtilitiesConstants-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5605D9E7147172DE00EC6950 /* ARFoundationAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				5605DA5E14717DDF00EC6950 /* NSData+FormEncoding.h */,
+				5605DA5F14717DDF00EC6950 /* NSData+FormEncoding.m */,
+				5605D9F01471731300EC6950 /* NSString+AppRenaissance.h */,
+				5605D9F11471731300EC6950 /* NSString+AppRenaissance.m */,
+				5605DA5A1471792B00EC6950 /* NSUserDefaults+Usability.h */,
+				5605DA5B1471792B00EC6950 /* NSUserDefaults+Usability.m */,
+				5605D9E8147172DE00EC6950 /* Supporting Files */,
+			);
+			path = ARFoundationAdditions;
+			sourceTree = "<group>";
+		};
+		5605D9E8147172DE00EC6950 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5605D9E9147172DE00EC6950 /* ARFoundationAdditions-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5605D9FC147174AE00EC6950 /* ARUIKitAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				5605DA50147176FF00EC6950 /* UIAlertView+ShowMessage.h */,
+				5605DA51147176FF00EC6950 /* UIAlertView+ShowMessage.m */,
+				5605DA54147177DF00EC6950 /* UIApplication+MainBundle.h */,
+				5605DA55147177DF00EC6950 /* UIApplication+MainBundle.m */,
+				5605DA05147174E600EC6950 /* UIImage+Alpha.h */,
+				5605DA06147174E600EC6950 /* UIImage+Alpha.m */,
+				5605DA07147174E600EC6950 /* UIImage+Resize.h */,
+				5605DA08147174E600EC6950 /* UIImage+Resize.m */,
+				5605DA09147174E600EC6950 /* UIImage+RoundedCorner.h */,
+				5605DA0A147174E600EC6950 /* UIImage+RoundedCorner.m */,
+				5605DA0B147174E600EC6950 /* UIImage+Transform.h */,
+				5605DA0C147174E600EC6950 /* UIImage+Transform.m */,
+				5605DA0D147174E600EC6950 /* UIView+ResignResponder.h */,
+				5605DA0E147174E600EC6950 /* UIView+ResignResponder.m */,
+				5605D9FD147174AE00EC6950 /* Supporting Files */,
+			);
+			path = ARUIKitAdditions;
+			sourceTree = "<group>";
+		};
+		5605D9FD147174AE00EC6950 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5605D9FE147174AE00EC6950 /* ARUIKitAdditions-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5605DA1F1471769500EC6950 /* ARHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				5605DA981471893600EC6950 /* ARColorHelper.h */,
+				5605DA991471893600EC6950 /* ARColorHelper.m */,
+				5605DA9A1471893600EC6950 /* ARCredentialHelper.h */,
+				5605DA9B1471893600EC6950 /* ARCredentialHelper.m */,
+				5605DA9C1471893600EC6950 /* ARDeviceHelper.h */,
+				5605DA9D1471893600EC6950 /* ARDeviceHelper.m */,
+				5605DA9E1471893600EC6950 /* ARGoogleMapAddress.h */,
+				5605DA9F1471893600EC6950 /* ARGoogleMapAddress.m */,
+				5605DAA01471893600EC6950 /* ARLayoutHelpers.h */,
+				5605DAA11471893600EC6950 /* ARLayoutHelpers.m */,
+				5605DA201471769600EC6950 /* Supporting Files */,
+			);
+			path = ARHelpers;
+			sourceTree = "<group>";
+		};
+		5605DA201471769600EC6950 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5605DA211471769600EC6950 /* ARHelpers-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5605DA6814717FD400EC6950 /* ARGoogleAnaylitics */ = {
+			isa = PBXGroup;
+			children = (
+				5605DA76147180F700EC6950 /* GANTracker.h */,
+				5605DA77147180F700EC6950 /* libGoogleAnalytics.a */,
+				5605DA711471800800EC6950 /* ARGoogleAnalytics.h */,
+				5605DA721471800800EC6950 /* ARGoogleAnalytics.m */,
+				5605DA6914717FD400EC6950 /* Supporting Files */,
+			);
+			path = ARGoogleAnaylitics;
+			sourceTree = "<group>";
+		};
+		5605DA6914717FD400EC6950 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5605DA6A14717FD400EC6950 /* ARGoogleAnaylitics-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5605D9C61471723800EC6950 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605D9DD147172AD00EC6950 /* ARCredentialKeys.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605D9E3147172DE00EC6950 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605D9F51471742F00EC6950 /* NSString+AppRenaissance.h in Headers */,
+				5605DA5C1471792B00EC6950 /* NSUserDefaults+Usability.h in Headers */,
+				5605DA6014717DDF00EC6950 /* NSData+FormEncoding.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605D9F8147174AE00EC6950 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA0F147174E600EC6950 /* UIImage+Alpha.h in Headers */,
+				5605DA11147174E600EC6950 /* UIImage+Resize.h in Headers */,
+				5605DA13147174E600EC6950 /* UIImage+RoundedCorner.h in Headers */,
+				5605DA15147174E600EC6950 /* UIImage+Transform.h in Headers */,
+				5605DA17147174E600EC6950 /* UIView+ResignResponder.h in Headers */,
+				5605DA52147176FF00EC6950 /* UIAlertView+ShowMessage.h in Headers */,
+				5605DA56147177DF00EC6950 /* UIApplication+MainBundle.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605DA1B1471769500EC6950 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DAA21471893600EC6950 /* ARColorHelper.h in Headers */,
+				5605DAA41471893600EC6950 /* ARCredentialHelper.h in Headers */,
+				5605DAA61471893600EC6950 /* ARDeviceHelper.h in Headers */,
+				5605DAA81471893600EC6950 /* ARGoogleMapAddress.h in Headers */,
+				5605DAAA1471893600EC6950 /* ARLayoutHelpers.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605DA6414717FD400EC6950 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA731471800800EC6950 /* ARGoogleAnalytics.h in Headers */,
+				5605DA78147180F700EC6950 /* GANTracker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5605D9C71471723800EC6950 /* ARiOSUtilitiesConstants */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5605D9D31471723800EC6950 /* Build configuration list for PBXNativeTarget "ARiOSUtilitiesConstants" */;
+			buildPhases = (
+				5605D9C41471723800EC6950 /* Sources */,
+				5605D9C51471723800EC6950 /* Frameworks */,
+				5605D9C61471723800EC6950 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARiOSUtilitiesConstants;
+			productName = ARiOSUtilitiesConstants;
+			productReference = 5605D9C81471723800EC6950 /* libARiOSUtilitiesConstants.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5605D9E4147172DE00EC6950 /* ARFoundationAdditions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5605D9ED147172DE00EC6950 /* Build configuration list for PBXNativeTarget "ARFoundationAdditions" */;
+			buildPhases = (
+				5605D9E1147172DE00EC6950 /* Sources */,
+				5605D9E2147172DE00EC6950 /* Frameworks */,
+				5605D9E3147172DE00EC6950 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARFoundationAdditions;
+			productName = ARFoundationAdditions;
+			productReference = 5605D9E5147172DE00EC6950 /* libARFoundationAdditions.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5605D9F9147174AE00EC6950 /* ARUIKitAdditions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5605DA02147174AE00EC6950 /* Build configuration list for PBXNativeTarget "ARUIKitAdditions" */;
+			buildPhases = (
+				5605D9F6147174AE00EC6950 /* Sources */,
+				5605D9F7147174AE00EC6950 /* Frameworks */,
+				5605D9F8147174AE00EC6950 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARUIKitAdditions;
+			productName = ARUIKitAdditions;
+			productReference = 5605D9FA147174AE00EC6950 /* libARUIKitAdditions.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5605DA1C1471769500EC6950 /* ARHelpers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5605DA251471769600EC6950 /* Build configuration list for PBXNativeTarget "ARHelpers" */;
+			buildPhases = (
+				5605DA191471769500EC6950 /* Sources */,
+				5605DA1A1471769500EC6950 /* Frameworks */,
+				5605DA1B1471769500EC6950 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5605DA93147187A100EC6950 /* PBXTargetDependency */,
+				5605DA911471879900EC6950 /* PBXTargetDependency */,
+			);
+			name = ARHelpers;
+			productName = ARHelpers;
+			productReference = 5605DA1D1471769500EC6950 /* libARHelpers.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5605DA6514717FD400EC6950 /* ARGoogleAnaylitics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5605DA6E14717FD400EC6950 /* Build configuration list for PBXNativeTarget "ARGoogleAnaylitics" */;
+			buildPhases = (
+				5605DA6214717FD400EC6950 /* Sources */,
+				5605DA6314717FD400EC6950 /* Frameworks */,
+				5605DA6414717FD400EC6950 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARGoogleAnaylitics;
+			productName = ARGoogleAnaylitics;
+			productReference = 5605DA6614717FD400EC6950 /* libARGoogleAnaylitics.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5605D9BD1471721100EC6950 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 5605D9C01471721100EC6950 /* Build configuration list for PBXProject "ARiOSUtilities" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5605D9BB1471721100EC6950;
+			productRefGroup = 5605D9C91471723800EC6950 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5605D9C71471723800EC6950 /* ARiOSUtilitiesConstants */,
+				5605D9E4147172DE00EC6950 /* ARFoundationAdditions */,
+				5605D9F9147174AE00EC6950 /* ARUIKitAdditions */,
+				5605DA1C1471769500EC6950 /* ARHelpers */,
+				5605DA6514717FD400EC6950 /* ARGoogleAnaylitics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5605D9C41471723800EC6950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605D9DE147172AD00EC6950 /* ARCredentialKeys.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605D9E1147172DE00EC6950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605D9F41471742800EC6950 /* NSString+AppRenaissance.m in Sources */,
+				5605DA5D1471792B00EC6950 /* NSUserDefaults+Usability.m in Sources */,
+				5605DA6114717DDF00EC6950 /* NSData+FormEncoding.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605D9F6147174AE00EC6950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA10147174E600EC6950 /* UIImage+Alpha.m in Sources */,
+				5605DA12147174E600EC6950 /* UIImage+Resize.m in Sources */,
+				5605DA14147174E600EC6950 /* UIImage+RoundedCorner.m in Sources */,
+				5605DA16147174E600EC6950 /* UIImage+Transform.m in Sources */,
+				5605DA18147174E600EC6950 /* UIView+ResignResponder.m in Sources */,
+				5605DA53147176FF00EC6950 /* UIAlertView+ShowMessage.m in Sources */,
+				5605DA57147177DF00EC6950 /* UIApplication+MainBundle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605DA191471769500EC6950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DAA31471893600EC6950 /* ARColorHelper.m in Sources */,
+				5605DAA51471893600EC6950 /* ARCredentialHelper.m in Sources */,
+				5605DAA71471893600EC6950 /* ARDeviceHelper.m in Sources */,
+				5605DAA91471893600EC6950 /* ARGoogleMapAddress.m in Sources */,
+				5605DAAB1471893600EC6950 /* ARLayoutHelpers.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5605DA6214717FD400EC6950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605DA741471800800EC6950 /* ARGoogleAnalytics.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5605DA911471879900EC6950 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5605D9C71471723800EC6950 /* ARiOSUtilitiesConstants */;
+			targetProxy = 5605DA901471879900EC6950 /* PBXContainerItemProxy */;
+		};
+		5605DA93147187A100EC6950 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5605D9E4147172DE00EC6950 /* ARFoundationAdditions */;
+			targetProxy = 5605DA92147187A100EC6950 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5605D9C21471721100EC6950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		5605D9C31471721100EC6950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		5605D9D41471723800EC6950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ARiOSUtilitiesConstants.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARiOSUtilitiesConstants/ARiOSUtilitiesConstants-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5605D9D51471723800EC6950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/ARiOSUtilitiesConstants.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARiOSUtilitiesConstants/ARiOSUtilitiesConstants-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5605D9EE147172DE00EC6950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ARFoundationAdditions.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARFoundationAdditions/ARFoundationAdditions-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5605D9EF147172DE00EC6950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/ARFoundationAdditions.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARFoundationAdditions/ARFoundationAdditions-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5605DA03147174AE00EC6950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ARUIKitAdditions.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARUIKitAdditions/ARUIKitAdditions-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5605DA04147174AE00EC6950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/ARUIKitAdditions.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARUIKitAdditions/ARUIKitAdditions-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5605DA261471769600EC6950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ARHelpers.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARHelpers/ARHelpers-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5605DA271471769600EC6950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/ARHelpers.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARHelpers/ARHelpers-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5605DA6F14717FD400EC6950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ARGoogleAnaylitics.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARGoogleAnaylitics/ARGoogleAnaylitics-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Submodules/GoogleAnalyticsSDKiOS/Library\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5605DA7014717FD400EC6950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/ARGoogleAnaylitics.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARGoogleAnaylitics/ARGoogleAnaylitics-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Submodules/GoogleAnalyticsSDKiOS/Library\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5605D9C01471721100EC6950 /* Build configuration list for PBXProject "ARiOSUtilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5605D9C21471721100EC6950 /* Debug */,
+				5605D9C31471721100EC6950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5605D9D31471723800EC6950 /* Build configuration list for PBXNativeTarget "ARiOSUtilitiesConstants" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5605D9D41471723800EC6950 /* Debug */,
+				5605D9D51471723800EC6950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5605D9ED147172DE00EC6950 /* Build configuration list for PBXNativeTarget "ARFoundationAdditions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5605D9EE147172DE00EC6950 /* Debug */,
+				5605D9EF147172DE00EC6950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5605DA02147174AE00EC6950 /* Build configuration list for PBXNativeTarget "ARUIKitAdditions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5605DA03147174AE00EC6950 /* Debug */,
+				5605DA04147174AE00EC6950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5605DA251471769600EC6950 /* Build configuration list for PBXNativeTarget "ARHelpers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5605DA261471769600EC6950 /* Debug */,
+				5605DA271471769600EC6950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5605DA6E14717FD400EC6950 /* Build configuration list for PBXNativeTarget "ARGoogleAnaylitics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5605DA6F14717FD400EC6950 /* Debug */,
+				5605DA7014717FD400EC6950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5605D9BD1471721100EC6950 /* Project object */;
+}

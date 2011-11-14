@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ARiOSUtilitiesConstants' target in the 'ARiOSUtilitiesConstants' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
