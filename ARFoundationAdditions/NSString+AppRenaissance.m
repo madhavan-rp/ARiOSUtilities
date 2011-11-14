@@ -23,10 +23,10 @@
 {
     NSString *URLEncodedString =
         (__bridge NSString *) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                             (__bridge CFStringRef) self,
-                                                             NULL,
-                                                             CFSTR(":/?#[]@!$&'()*+,;="),
-                                                             kCFStringEncodingUTF8);
+                                                                      (__bridge CFStringRef) self,
+                                                                      NULL,
+                                                                      CFSTR(":/?#[]@!$&'()*+,;="),
+                                                                      kCFStringEncodingUTF8);
     return URLEncodedString;
 }
 
@@ -34,8 +34,8 @@
 {
     NSString *URLDecodeedString =
         (__bridge NSString *) CFURLCreateStringByReplacingPercentEscapes( kCFAllocatorDefault,
-                                                                 (__bridge CFStringRef) self,
-                                                                 CFSTR(":/?#[]@!$&'()*+,;=") );
+                                                                          (__bridge CFStringRef) self,
+                                                                          CFSTR(":/?#[]@!$&'()*+,;=") );
     return URLDecodeedString;
 }
 
@@ -47,6 +47,7 @@
     {
         [str appendString:base];
     }
+
     /* Append each name-value pair. */
     if(params)
     {
@@ -68,7 +69,7 @@
             [str appendString:pair];
         }
     }
-    
+
     return str;
 }
 

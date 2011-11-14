@@ -34,4 +34,5 @@
 {
     return [self bundleValueForKey:@"CFBundleDisplayName"];
 }
+
 @end

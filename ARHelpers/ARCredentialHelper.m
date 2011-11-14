@@ -16,9 +16,10 @@
     static ARCredentialHelper *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[ARCredentialHelper alloc] init];
-        // Do any other initialisation stuff here
-    });
+                      sharedInstance = [[ARCredentialHelper alloc] init];
+
+                      /* Do any other initialisation stuff here */
+                  });
     return sharedInstance;
 }
 
@@ -37,7 +38,7 @@
 }
 
 /* saves the given accessKey to the standard NSUserDefaults with the key "CredentialKey_AccessKey"
- **/
+**/
 - (void)saveUserId:(NSString *)userId
 {
     [NSUserDefaults saveString:userId forKey:CredentialKey_UserIdKey];
