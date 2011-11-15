@@ -21,22 +21,20 @@
 @implementation NSString (URLEncoding)
 - (NSString *)URLEncode
 {
-    NSString *URLEncodedString =
-        (__bridge NSString *) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                      (__bridge CFStringRef) self,
-                                                                      NULL,
-                                                                      CFSTR(":/?#[]@!$&'()*+,;="),
-                                                                      kCFStringEncodingUTF8);
-    return URLEncodedString;
+    CFStringRef encoded = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                                  (__bridge CFStringRef)self,
+                                                                  NULL,
+                                                                  CFSTR(":/?#[]@!$&'()*+,;="),
+                                                                  kCFStringEncodingUTF8);
+    return (__bridge_transfer NSString *)encoded;
 }
 
 - (NSString *)URLDecode
 {
-    NSString *URLDecodeedString =
-        (__bridge NSString *) CFURLCreateStringByReplacingPercentEscapes( kCFAllocatorDefault,
-                                                                          (__bridge CFStringRef) self,
-                                                                          CFSTR(":/?#[]@!$&'()*+,;=") );
-    return URLDecodeedString;
+    CFStringRef decoded = CFURLCreateStringByReplacingPercentEscapes( kCFAllocatorDefault,
+                                                                     (__bridge CFStringRef)self,
+                                                                     CFSTR(":/?#[]@!$&'()*+,;=") );
+    return (__bridge_transfer NSString *)decoded;
 }
 
 + (NSString *)queryStringWithBase:(NSString *)base parameters:(NSDictionary *)params prefixed:(BOOL)prefixed
