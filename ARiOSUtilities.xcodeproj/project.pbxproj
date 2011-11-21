@@ -121,6 +121,7 @@
 		5605DA9F1471893600EC6950 /* ARGoogleMapAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARGoogleMapAddress.m; sourceTree = "<group>"; };
 		5605DAA01471893600EC6950 /* ARLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLayoutHelpers.h; sourceTree = "<group>"; };
 		5605DAA11471893600EC6950 /* ARLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLayoutHelpers.m; sourceTree = "<group>"; };
+		5698565A147ABA71005EDA52 /* Library.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Library.xcconfig; path = Configurations/Library.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +175,7 @@
 		5605D9BB1471721100EC6950 = {
 			isa = PBXGroup;
 			children = (
+				56985658147ABA22005EDA52 /* Configurations */,
 				5605D9CD1471723800EC6950 /* ARiOSUtilitiesConstants */,
 				5605D9E7147172DE00EC6950 /* ARFoundationAdditions */,
 				5605D9FC147174AE00EC6950 /* ARUIKitAdditions */,
@@ -321,6 +323,14 @@
 				5605DA6A14717FD400EC6950 /* ARGoogleAnaylitics-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56985658147ABA22005EDA52 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				5698565A147ABA71005EDA52 /* Library.xcconfig */,
+			);
+			name = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,13 +579,25 @@
 /* Begin XCBuildConfiguration section */
 		5605D9C21471721100EC6950 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5698565A147ABA71005EDA52 /* Library.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		5605D9C31471721100EC6950 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5698565A147ABA71005EDA52 /* Library.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
