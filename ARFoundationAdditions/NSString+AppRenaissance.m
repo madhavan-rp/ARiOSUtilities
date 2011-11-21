@@ -26,7 +26,7 @@
                                                                   NULL,
                                                                   CFSTR(":/?#[]@!$&'()*+,;="),
                                                                   kCFStringEncodingUTF8);
-    return (__bridge_transfer NSString *)encoded;
+    return [NSString stringWithString:(__bridge_transfer NSString *)encoded];
 }
 
 - (NSString *)URLDecode
@@ -34,7 +34,7 @@
     CFStringRef decoded = CFURLCreateStringByReplacingPercentEscapes( kCFAllocatorDefault,
                                                                      (__bridge CFStringRef)self,
                                                                      CFSTR(":/?#[]@!$&'()*+,;=") );
-    return (__bridge_transfer NSString *)decoded;
+    return [NSString stringWithString:(__bridge_transfer NSString *)decoded];
 }
 
 + (NSString *)queryStringWithBase:(NSString *)base parameters:(NSDictionary *)params prefixed:(BOOL)prefixed
@@ -67,7 +67,6 @@
             [str appendString:pair];
         }
     }
-
     return [NSString stringWithString:str];
 }
 
