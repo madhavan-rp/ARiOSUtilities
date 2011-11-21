@@ -68,7 +68,7 @@
         }
     }
 
-    return str;
+    return [NSString stringWithString:str];
 }
 
 @end
