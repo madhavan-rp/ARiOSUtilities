@@ -15,19 +15,9 @@
     return [info objectForKey:key];
 }
 
-- (NSString *)version
-{
-    return [self bundleValueForKey:@"CFBundleShortVersionString"];
-}
-
-- (NSString *)buildNumber
-{
-    return [self bundleValueForKey:@"CFBundleVersion"];
-}
-
 - (NSString *)applicationVersion
 {
-    return [NSString stringWithFormat:@"%@ (%@)", [self version], [self buildNumber]];
+    return [self bundleValueForKey:@"CFBundleShortVersionString"];
 }
 
 - (NSString *)applicationName
