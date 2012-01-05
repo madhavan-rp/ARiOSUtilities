@@ -51,6 +51,8 @@
 		5605DAA91471893600EC6950 /* ARGoogleMapAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA9F1471893600EC6950 /* ARGoogleMapAddress.m */; };
 		5605DAAA1471893600EC6950 /* ARLayoutHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DAA01471893600EC6950 /* ARLayoutHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5605DAAB1471893600EC6950 /* ARLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DAA11471893600EC6950 /* ARLayoutHelpers.m */; };
+		566613DF14B506C00017FF48 /* ARAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 566613DD14B506C00017FF48 /* ARAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		566613E014B506C00017FF48 /* ARAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566613DE14B506C00017FF48 /* ARAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		5605DA9F1471893600EC6950 /* ARGoogleMapAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARGoogleMapAddress.m; sourceTree = "<group>"; };
 		5605DAA01471893600EC6950 /* ARLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLayoutHelpers.h; sourceTree = "<group>"; };
 		5605DAA11471893600EC6950 /* ARLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLayoutHelpers.m; sourceTree = "<group>"; };
+		566613DD14B506C00017FF48 /* ARAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARAlertView.h; sourceTree = "<group>"; };
+		566613DE14B506C00017FF48 /* ARAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARAlertView.m; sourceTree = "<group>"; };
 		5698565A147ABA71005EDA52 /* Library.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Library.xcconfig; path = Configurations/Library.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +256,8 @@
 		5605D9FC147174AE00EC6950 /* ARUIKitAdditions */ = {
 			isa = PBXGroup;
 			children = (
+				566613DD14B506C00017FF48 /* ARAlertView.h */,
+				566613DE14B506C00017FF48 /* ARAlertView.m */,
 				5605DA50147176FF00EC6950 /* UIAlertView+ShowMessage.h */,
 				5605DA51147176FF00EC6950 /* UIAlertView+ShowMessage.m */,
 				5605DA54147177DF00EC6950 /* UIApplication+MainBundle.h */,
@@ -363,6 +369,7 @@
 				5605DA13147174E600EC6950 /* UIImage+RoundedCorner.h in Headers */,
 				5605DA15147174E600EC6950 /* UIImage+Transform.h in Headers */,
 				5605DA17147174E600EC6950 /* UIView+ResignResponder.h in Headers */,
+				566613DF14B506C00017FF48 /* ARAlertView.h in Headers */,
 				5605DA52147176FF00EC6950 /* UIAlertView+ShowMessage.h in Headers */,
 				5605DA56147177DF00EC6950 /* UIApplication+MainBundle.h in Headers */,
 			);
@@ -538,6 +545,7 @@
 				5605DA18147174E600EC6950 /* UIView+ResignResponder.m in Sources */,
 				5605DA53147176FF00EC6950 /* UIAlertView+ShowMessage.m in Sources */,
 				5605DA57147177DF00EC6950 /* UIApplication+MainBundle.m in Sources */,
+				566613E014B506C00017FF48 /* ARAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
