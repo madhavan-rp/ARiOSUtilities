@@ -53,6 +53,8 @@
 		5605DAAB1471893600EC6950 /* ARLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DAA11471893600EC6950 /* ARLayoutHelpers.m */; };
 		566613DF14B506C00017FF48 /* ARAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 566613DD14B506C00017FF48 /* ARAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		566613E014B506C00017FF48 /* ARAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566613DE14B506C00017FF48 /* ARAlertView.m */; };
+		568A023614C8ED24007EF625 /* NSDictionary+NoNulls.h in Headers */ = {isa = PBXBuildFile; fileRef = 568A023414C8ED24007EF625 /* NSDictionary+NoNulls.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		568A023714C8ED24007EF625 /* NSDictionary+NoNulls.m in Sources */ = {isa = PBXBuildFile; fileRef = 568A023514C8ED24007EF625 /* NSDictionary+NoNulls.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		5605DAA11471893600EC6950 /* ARLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLayoutHelpers.m; sourceTree = "<group>"; };
 		566613DD14B506C00017FF48 /* ARAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARAlertView.h; sourceTree = "<group>"; };
 		566613DE14B506C00017FF48 /* ARAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARAlertView.m; sourceTree = "<group>"; };
+		568A023414C8ED24007EF625 /* NSDictionary+NoNulls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NoNulls.h"; sourceTree = "<group>"; };
+		568A023514C8ED24007EF625 /* NSDictionary+NoNulls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NoNulls.m"; sourceTree = "<group>"; };
 		5698565A147ABA71005EDA52 /* Library.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Library.xcconfig; path = Configurations/Library.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +240,8 @@
 			children = (
 				5605DA5E14717DDF00EC6950 /* NSData+FormEncoding.h */,
 				5605DA5F14717DDF00EC6950 /* NSData+FormEncoding.m */,
+				568A023414C8ED24007EF625 /* NSDictionary+NoNulls.h */,
+				568A023514C8ED24007EF625 /* NSDictionary+NoNulls.m */,
 				5605D9F01471731300EC6950 /* NSString+AppRenaissance.h */,
 				5605D9F11471731300EC6950 /* NSString+AppRenaissance.m */,
 				5605DA5A1471792B00EC6950 /* NSUserDefaults+Usability.h */,
@@ -357,6 +363,7 @@
 				5605D9F51471742F00EC6950 /* NSString+AppRenaissance.h in Headers */,
 				5605DA5C1471792B00EC6950 /* NSUserDefaults+Usability.h in Headers */,
 				5605DA6014717DDF00EC6950 /* NSData+FormEncoding.h in Headers */,
+				568A023614C8ED24007EF625 /* NSDictionary+NoNulls.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +538,7 @@
 				5605D9F41471742800EC6950 /* NSString+AppRenaissance.m in Sources */,
 				5605DA5D1471792B00EC6950 /* NSUserDefaults+Usability.m in Sources */,
 				5605DA6114717DDF00EC6950 /* NSData+FormEncoding.m in Sources */,
+				568A023714C8ED24007EF625 /* NSDictionary+NoNulls.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
