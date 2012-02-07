@@ -27,39 +27,39 @@
 **/
 - (void)saveAccessKey:(NSString *)accessKey
 {
-    [NSUserDefaults saveString:accessKey forKey:CredentialKey_AccessKey];
+    [NSUserDefaults saveObject:accessKey forKey:CredentialKey_AccessKey];
 }
 
 /* saves the given secretKey to the standard NSUserDefaults with the key "CredentialKey_SecretKey"
 **/
 - (void)saveSecretKey:(NSString *)secretKey
 {
-    [NSUserDefaults saveString:secretKey forKey:CredentialKey_SecretKey];
+    [NSUserDefaults saveObject:secretKey forKey:CredentialKey_SecretKey];
 }
 
 /* saves the given accessKey to the standard NSUserDefaults with the key "CredentialKey_AccessKey"
 **/
 - (void)saveUserId:(NSString *)userId
 {
-    [NSUserDefaults saveString:userId forKey:CredentialKey_UserIdKey];
+    [NSUserDefaults saveObject:userId forKey:CredentialKey_UserIdKey];
 }
 
 /* Returns the value saved in the standard UserDefaults for the key "CredentialKey_AccessKey" */
 - (NSString *)accessKey
 {
-    return [NSUserDefaults retrieveStringForKey:CredentialKey_AccessKey];
+    return [NSUserDefaults retrieveObjectForKey:CredentialKey_AccessKey];
 }
 
 /* Returns the value saved in the standard UserDefaults for the key "CredentialKey_SecretKey" */
 - (NSString *)secretKey
 {
-    return [NSUserDefaults retrieveStringForKey:CredentialKey_SecretKey];
+    return [NSUserDefaults retrieveObjectForKey:CredentialKey_SecretKey];
 }
 
 /* Returns the value saved in the standard UserDefaults for the key "CredentialKey_SecretKey" */
 - (NSString *)userId
 {
-    return [NSUserDefaults retrieveStringForKey:CredentialKey_UserIdKey];
+    return [NSUserDefaults retrieveObjectForKey:CredentialKey_UserIdKey];
 }
 
 /* Deletes the saved credentials from NSUserDefaults */

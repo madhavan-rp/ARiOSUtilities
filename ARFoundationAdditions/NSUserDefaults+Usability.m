@@ -10,15 +10,15 @@
 @implementation NSUserDefaults (Usability)
 
 /* convenience method to save a given string for a given key */
-+ (void)saveString:(NSString *)string forKey:(NSString *)key
++ (void)saveObject:(id)object forKey:(NSString *)key
 {
     NSUserDefaults *defaults = [self standardUserDefaults];
-    [defaults setObject:string forKey:key];
+    [defaults setObject:object forKey:key];
     [defaults synchronize];
 }
 
 /* convenience method to return a string for a given key */
-+ (NSString *)retrieveStringForKey:(NSString *)key
++ (id)retrieveObjectForKey:(NSString *)key
 {
     return [[self standardUserDefaults] objectForKey:key];
 }

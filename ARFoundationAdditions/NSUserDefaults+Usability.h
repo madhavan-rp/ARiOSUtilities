@@ -9,11 +9,11 @@
 
 @interface NSUserDefaults (Usability)
 
-/* convenience method to save a given string for a given key */
-+ (void)saveString:(NSString *)string forKey:(NSString *)key;
+/* convenience method to save a given object for a given key */
++ (void)saveObject:(id)object forKey:(NSString *)key;
 
-/* convenience method to return a string for a given key */
-+ (NSString *)retrieveStringForKey:(NSString *)key;
+/* convenience method to return an object for a given key */
++ (id)retrieveObjectForKey:(NSString *)key;
 
 /* convenience method to delete a value for a given key */
 + (void)deleteValueForKey:(NSString *)key;
