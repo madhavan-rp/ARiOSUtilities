@@ -55,6 +55,8 @@
 		566613E014B506C00017FF48 /* ARAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566613DE14B506C00017FF48 /* ARAlertView.m */; };
 		568A023614C8ED24007EF625 /* NSDictionary+NoNulls.h in Headers */ = {isa = PBXBuildFile; fileRef = 568A023414C8ED24007EF625 /* NSDictionary+NoNulls.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		568A023714C8ED24007EF625 /* NSDictionary+NoNulls.m in Sources */ = {isa = PBXBuildFile; fileRef = 568A023514C8ED24007EF625 /* NSDictionary+NoNulls.m */; };
+		56AD451314EABA3600DA056B /* UIView+Positioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 56AD451114EABA3600DA056B /* UIView+Positioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56AD451414EABA3600DA056B /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AD451214EABA3600DA056B /* UIView+Positioning.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 		568A023414C8ED24007EF625 /* NSDictionary+NoNulls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NoNulls.h"; sourceTree = "<group>"; };
 		568A023514C8ED24007EF625 /* NSDictionary+NoNulls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NoNulls.m"; sourceTree = "<group>"; };
 		5698565A147ABA71005EDA52 /* Library.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Library.xcconfig; path = Configurations/Library.xcconfig; sourceTree = "<group>"; };
+		56AD451114EABA3600DA056B /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Positioning.h"; sourceTree = "<group>"; };
+		56AD451214EABA3600DA056B /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Positioning.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +280,8 @@
 				5605DA0A147174E600EC6950 /* UIImage+RoundedCorner.m */,
 				5605DA0B147174E600EC6950 /* UIImage+Transform.h */,
 				5605DA0C147174E600EC6950 /* UIImage+Transform.m */,
+				56AD451114EABA3600DA056B /* UIView+Positioning.h */,
+				56AD451214EABA3600DA056B /* UIView+Positioning.m */,
 				5605DA0D147174E600EC6950 /* UIView+ResignResponder.h */,
 				5605DA0E147174E600EC6950 /* UIView+ResignResponder.m */,
 				5605D9FD147174AE00EC6950 /* Supporting Files */,
@@ -379,6 +385,7 @@
 				566613DF14B506C00017FF48 /* ARAlertView.h in Headers */,
 				5605DA52147176FF00EC6950 /* UIAlertView+ShowMessage.h in Headers */,
 				5605DA56147177DF00EC6950 /* UIApplication+MainBundle.h in Headers */,
+				56AD451314EABA3600DA056B /* UIView+Positioning.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +561,7 @@
 				5605DA53147176FF00EC6950 /* UIAlertView+ShowMessage.m in Sources */,
 				5605DA57147177DF00EC6950 /* UIApplication+MainBundle.m in Sources */,
 				566613E014B506C00017FF48 /* ARAlertView.m in Sources */,
+				56AD451414EABA3600DA056B /* UIView+Positioning.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
