@@ -62,9 +62,25 @@
                 [str appendString:@"&"];
             }
             NSString *name = [names objectAtIndex:i];
-            NSString *value = [[params objectForKey:name] URLEncode];
-            NSString *pair = [NSString stringWithFormat:@"%@=%@", name, value ];
-            [str appendString:pair];
+            if ([[params objectForKey:name] isKindOfClass:[NSArray class]])
+            {
+                NSArray *array = [params objectForKey:name];
+                [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    NSString *value = (NSString*)obj;
+                    NSString *pair = [NSString stringWithFormat:@"%@[]=%@", name, value ];
+                    [str appendString:pair];
+                    if (obj != [array lastObject])
+                    {
+                        [str appendString:@"&"];
+                    }
+                }];
+            }
+            else
+            {
+                NSString *value = [[params objectForKey:name] URLEncode];
+                NSString *pair = [NSString stringWithFormat:@"%@=%@", name, value ];
+                [str appendString:pair];
+            }
         }
     }
     return [NSString stringWithString:str];
