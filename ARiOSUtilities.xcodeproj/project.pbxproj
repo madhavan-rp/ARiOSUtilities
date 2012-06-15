@@ -6,6 +6,24 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		568FB398158BCD8800C72EE1 /* AllTargets */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 568FB39B158BCD8800C72EE1 /* Build configuration list for PBXAggregateTarget "AllTargets" */;
+			buildPhases = (
+			);
+			dependencies = (
+				568FB3A6158BCDAB00C72EE1 /* PBXTargetDependency */,
+				568FB3A4158BCDA800C72EE1 /* PBXTargetDependency */,
+				568FB3A2158BCDA500C72EE1 /* PBXTargetDependency */,
+				568FB3A0158BCDA200C72EE1 /* PBXTargetDependency */,
+				568FB39E158BCD9E00C72EE1 /* PBXTargetDependency */,
+			);
+			name = AllTargets;
+			productName = AllTargets;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		5605D9DD147172AD00EC6950 /* ARCredentialKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605D9DA147172AD00EC6950 /* ARCredentialKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5605D9DE147172AD00EC6950 /* ARCredentialKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605D9DB147172AD00EC6950 /* ARCredentialKeys.m */; };
@@ -73,6 +91,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5605D9E4147172DE00EC6950;
 			remoteInfo = ARFoundationAdditions;
+		};
+		568FB39D158BCD9E00C72EE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5605D9BD1471721100EC6950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5605D9C71471723800EC6950;
+			remoteInfo = ARiOSUtilitiesConstants;
+		};
+		568FB39F158BCDA200C72EE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5605D9BD1471721100EC6950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5605D9E4147172DE00EC6950;
+			remoteInfo = ARFoundationAdditions;
+		};
+		568FB3A1158BCDA500C72EE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5605D9BD1471721100EC6950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5605D9F9147174AE00EC6950;
+			remoteInfo = ARUIKitAdditions;
+		};
+		568FB3A3158BCDA800C72EE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5605D9BD1471721100EC6950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5605DA1C1471769500EC6950;
+			remoteInfo = ARHelpers;
+		};
+		568FB3A5158BCDAB00C72EE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5605D9BD1471721100EC6950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5605DA6514717FD400EC6950;
+			remoteInfo = ARGoogleAnaylitics;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -520,6 +573,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				568FB398158BCD8800C72EE1 /* AllTargets */,
 				5605D9C71471723800EC6950 /* ARiOSUtilitiesConstants */,
 				5605D9E4147172DE00EC6950 /* ARFoundationAdditions */,
 				5605D9F9147174AE00EC6950 /* ARUIKitAdditions */,
@@ -597,6 +651,31 @@
 			isa = PBXTargetDependency;
 			target = 5605D9E4147172DE00EC6950 /* ARFoundationAdditions */;
 			targetProxy = 5605DA92147187A100EC6950 /* PBXContainerItemProxy */;
+		};
+		568FB39E158BCD9E00C72EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5605D9C71471723800EC6950 /* ARiOSUtilitiesConstants */;
+			targetProxy = 568FB39D158BCD9E00C72EE1 /* PBXContainerItemProxy */;
+		};
+		568FB3A0158BCDA200C72EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5605D9E4147172DE00EC6950 /* ARFoundationAdditions */;
+			targetProxy = 568FB39F158BCDA200C72EE1 /* PBXContainerItemProxy */;
+		};
+		568FB3A2158BCDA500C72EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5605D9F9147174AE00EC6950 /* ARUIKitAdditions */;
+			targetProxy = 568FB3A1158BCDA500C72EE1 /* PBXContainerItemProxy */;
+		};
+		568FB3A4158BCDA800C72EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5605DA1C1471769500EC6950 /* ARHelpers */;
+			targetProxy = 568FB3A3158BCDA800C72EE1 /* PBXContainerItemProxy */;
+		};
+		568FB3A6158BCDAB00C72EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5605DA6514717FD400EC6950 /* ARGoogleAnaylitics */;
+			targetProxy = 568FB3A5158BCDAB00C72EE1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -933,6 +1012,20 @@
 			};
 			name = Release;
 		};
+		568FB399158BCD8800C72EE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		568FB39A158BCD8800C72EE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -989,6 +1082,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		568FB39B158BCD8800C72EE1 /* Build configuration list for PBXAggregateTarget "AllTargets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				568FB399158BCD8800C72EE1 /* Debug */,
+				568FB39A158BCD8800C72EE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
