@@ -4,7 +4,6 @@
 //  rwarner@grailbox.com
 //  http://grailbox.com
 
-
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
 //  You may obtain a copy of the License at
@@ -20,8 +19,7 @@
 
 #import <Foundation/Foundation.h>
 
-
-@interface NSDate (formatting)
+@interface NSDate (Formatting)
 
 - (NSString *)formatWithString:(NSString *)format;
 - (NSString *)formatWithStyle:(NSDateFormatterStyle)style;
