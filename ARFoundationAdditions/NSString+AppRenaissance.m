@@ -32,8 +32,8 @@
 - (NSString *)URLDecode
 {
     CFStringRef decoded = CFURLCreateStringByReplacingPercentEscapes( kCFAllocatorDefault,
-                                                                     (__bridge CFStringRef)self,
-                                                                     CFSTR(":/?#[]@!$&'()*+,;=") );
+                                                                      (__bridge CFStringRef)self,
+                                                                      CFSTR(":/?#[]@!$&'()*+,;=") );
     return [NSString stringWithString:(__bridge_transfer NSString *)decoded];
 }
 
@@ -62,18 +62,19 @@
                 [str appendString:@"&"];
             }
             NSString *name = [names objectAtIndex:i];
-            if ([[params objectForKey:name] isKindOfClass:[NSArray class]])
+            if([[params objectForKey:name] isKindOfClass:[NSArray class]])
             {
                 NSArray *array = [params objectForKey:name];
-                [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    NSString *value = (NSString*)obj;
-                    NSString *pair = [NSString stringWithFormat:@"%@[]=%@", name, value ];
-                    [str appendString:pair];
-                    if (obj != [array lastObject])
-                    {
-                        [str appendString:@"&"];
-                    }
-                }];
+                [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+                 {
+                     NSString *value = (NSString *)obj;
+                     NSString *pair = [NSString stringWithFormat:@"%@[]=%@", name, value ];
+                     [str appendString:pair];
+                     if(obj != [array lastObject])
+                     {
+                         [str appendString:@"&"];
+                     }
+                 }];
             }
             else
             {
