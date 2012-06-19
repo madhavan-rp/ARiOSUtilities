@@ -69,6 +69,10 @@
 		5605DAA91471893600EC6950 /* ARGoogleMapAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DA9F1471893600EC6950 /* ARGoogleMapAddress.m */; };
 		5605DAAA1471893600EC6950 /* ARLayoutHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605DAA01471893600EC6950 /* ARLayoutHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5605DAAB1471893600EC6950 /* ARLayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605DAA11471893600EC6950 /* ARLayoutHelpers.m */; };
+		5624B2F21590D35800A1E2A1 /* NSDate+Comparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 5624B2EE1590D35800A1E2A1 /* NSDate+Comparison.h */; };
+		5624B2F31590D35800A1E2A1 /* NSDate+Comparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 5624B2EF1590D35800A1E2A1 /* NSDate+Comparison.m */; };
+		5624B2F41590D35800A1E2A1 /* NSDate+Formatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 5624B2F01590D35800A1E2A1 /* NSDate+Formatting.h */; };
+		5624B2F51590D35800A1E2A1 /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5624B2F11590D35800A1E2A1 /* NSDate+Formatting.m */; };
 		566613DF14B506C00017FF48 /* ARAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 566613DD14B506C00017FF48 /* ARAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		566613E014B506C00017FF48 /* ARAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566613DE14B506C00017FF48 /* ARAlertView.m */; };
 		568A023614C8ED24007EF625 /* NSDictionary+NoNulls.h in Headers */ = {isa = PBXBuildFile; fileRef = 568A023414C8ED24007EF625 /* NSDictionary+NoNulls.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -180,6 +184,10 @@
 		5605DA9F1471893600EC6950 /* ARGoogleMapAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARGoogleMapAddress.m; sourceTree = "<group>"; };
 		5605DAA01471893600EC6950 /* ARLayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLayoutHelpers.h; sourceTree = "<group>"; };
 		5605DAA11471893600EC6950 /* ARLayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLayoutHelpers.m; sourceTree = "<group>"; };
+		5624B2EE1590D35800A1E2A1 /* NSDate+Comparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Comparison.h"; sourceTree = "<group>"; };
+		5624B2EF1590D35800A1E2A1 /* NSDate+Comparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Comparison.m"; sourceTree = "<group>"; };
+		5624B2F01590D35800A1E2A1 /* NSDate+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
+		5624B2F11590D35800A1E2A1 /* NSDate+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatting.m"; sourceTree = "<group>"; };
 		566613DD14B506C00017FF48 /* ARAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARAlertView.h; sourceTree = "<group>"; };
 		566613DE14B506C00017FF48 /* ARAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARAlertView.m; sourceTree = "<group>"; };
 		568A023414C8ED24007EF625 /* NSDictionary+NoNulls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NoNulls.h"; sourceTree = "<group>"; };
@@ -297,6 +305,10 @@
 			children = (
 				5605DA5E14717DDF00EC6950 /* NSData+FormEncoding.h */,
 				5605DA5F14717DDF00EC6950 /* NSData+FormEncoding.m */,
+				5624B2EE1590D35800A1E2A1 /* NSDate+Comparison.h */,
+				5624B2EF1590D35800A1E2A1 /* NSDate+Comparison.m */,
+				5624B2F01590D35800A1E2A1 /* NSDate+Formatting.h */,
+				5624B2F11590D35800A1E2A1 /* NSDate+Formatting.m */,
 				568A023414C8ED24007EF625 /* NSDictionary+NoNulls.h */,
 				568A023514C8ED24007EF625 /* NSDictionary+NoNulls.m */,
 				5605D9F01471731300EC6950 /* NSString+AppRenaissance.h */,
@@ -423,6 +435,8 @@
 				5605DA5C1471792B00EC6950 /* NSUserDefaults+Usability.h in Headers */,
 				5605DA6014717DDF00EC6950 /* NSData+FormEncoding.h in Headers */,
 				568A023614C8ED24007EF625 /* NSDictionary+NoNulls.h in Headers */,
+				5624B2F21590D35800A1E2A1 /* NSDate+Comparison.h in Headers */,
+				5624B2F41590D35800A1E2A1 /* NSDate+Formatting.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +614,8 @@
 				5605DA5D1471792B00EC6950 /* NSUserDefaults+Usability.m in Sources */,
 				5605DA6114717DDF00EC6950 /* NSData+FormEncoding.m in Sources */,
 				568A023714C8ED24007EF625 /* NSDictionary+NoNulls.m in Sources */,
+				5624B2F31590D35800A1E2A1 /* NSDate+Comparison.m in Sources */,
+				5624B2F51590D35800A1E2A1 /* NSDate+Formatting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1090,6 +1106,7 @@
 				568FB39A158BCD8800C72EE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
