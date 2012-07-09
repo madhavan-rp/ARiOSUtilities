@@ -1,6 +1,5 @@
 //
 //  UIColor+HexString.h
-//  This Is Hardcore
 //
 //  Created by Kevin Clough on 6/26/12.
 //  Copyright (c) 2012 appRenaissance. All rights reserved.
@@ -10,6 +9,8 @@
 
 @interface UIColor (HexString)
 
-+ (UIColor *) colorWithHexString: (NSString *) hexString;
++ (UIColor *)colorWithHexString:(NSString *)hexString;
+
++ (NSString *)hexColorFromUIColor:(UIColor *)color;
 
 @end

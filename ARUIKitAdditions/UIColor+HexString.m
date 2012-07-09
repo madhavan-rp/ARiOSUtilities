@@ -1,8 +1,7 @@
 //
 //  UIColor+HexString.m
-//  This Is Hardcore
 //
-// From : http://stackoverflow.com/questions/1560081/how-can-i-create-a-uicolor-from-a-hex-string
+//  From : http://stackoverflow.com/questions/1560081/how-can-i-create-a-uicolor-from-a-hex-string
 //
 //  Created by Kevin Clough on 6/26/12.
 //  Copyright (c) 2012 appRenaissance. All rights reserved.
@@ -10,16 +9,16 @@
 
 #import "UIColor+HexString.h"
 
-@interface UIColor()
+@interface UIColor (HexString_Private)
 
 + (CGFloat) colorComponentFrom: (NSString *) string start: (NSUInteger) start length: (NSUInteger) length;
 
 @end
 
+@implementation UIColor (HexString)
 
-@implementation UIColor(HexString)
-
-+ (UIColor *) colorWithHexString: (NSString *) hexString {
++ (UIColor *)colorWithHexString:(NSString *)hexString
+{
     NSString *colorString = [[hexString stringByReplacingOccurrencesOfString: @"#" withString: @""] uppercaseString];
     CGFloat alpha, red, blue, green;
     switch ([colorString length]) {
@@ -54,6 +53,17 @@
     return [UIColor colorWithRed: red green: green blue: blue alpha: alpha];
 }
 
++ (NSString *)hexColorFromUIColor:(UIColor *)color
+{
+    const CGFloat *components = CGColorGetComponents(color.CGColor);
+    NSString *hexString = [NSString stringWithFormat:@"%02X%02X%02X", (int)(components[0]*255.0), (int)(components[1]*255.0), (int)(components[2]*255.0)];
+    return hexString;
+}
+
+@end
+
+@implementation UIColor (HexString_Private)
+
 + (CGFloat) colorComponentFrom: (NSString *) string start: (NSUInteger) start length: (NSUInteger) length {
     NSString *substring = [string substringWithRange: NSMakeRange(start, length)];
     NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat: @"%@%@", substring, substring];
@@ -62,4 +72,4 @@
     return hexComponent / 255.0;
 }
 
-@end 
+@end
