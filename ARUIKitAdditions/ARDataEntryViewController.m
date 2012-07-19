@@ -37,23 +37,27 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.shouldHideInputViewOnTapOutside = YES;
 
-        // default values
-        self.disabledControlAlpha = 0.25f;
-        self.enabledControlAlpha = 1.0f;
-        self.textFieldVisibilityPadding = 5.0f;
-        self.scrollViewHeaderHeight = 0.0f;
-        self.previousBarButtonText = [NSString stringWithFormat:@"Prev"];
-        self.nextBarButtonText = [NSString stringWithFormat:@"Next"];
-        self.barButtonItemStyle = UIBarButtonItemStyleBordered;
-        self.toolbarHeight = 30.0f;
-        self.toolbarStyle = UIBarStyleBlackTranslucent;
     }
     return self;
 }
 
 #pragma mark - Setup Methods
+- (void)doSetupWithDefaultValues
+{
+    self.shouldHideInputViewOnTapOutside = YES;
+
+    // default values
+    self.disabledControlAlpha = 0.25f;
+    self.enabledControlAlpha = 1.0f;
+    self.textFieldVisibilityPadding = 5.0f;
+    self.scrollViewHeaderHeight = 0.0f;
+    self.previousBarButtonText = [NSString stringWithFormat:@"Prev"];
+    self.nextBarButtonText = [NSString stringWithFormat:@"Next"];
+    self.barButtonItemStyle = UIBarButtonItemStyleBordered;
+    self.toolbarHeight = 30.0f;
+    self.toolbarStyle = UIBarStyleBlackTranslucent;
+}
 - (void)addHideInputViewGesture
 {
     self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleHideInputView:)];
@@ -83,6 +87,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self doSetupWithDefaultValues];
 }
 
 - (void)viewWillAppear:(BOOL)animated
