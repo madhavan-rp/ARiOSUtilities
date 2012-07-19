@@ -25,6 +25,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0A1B938215B84D490075DF88 /* ARDataEntryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A1B938015B84D480075DF88 /* ARDataEntryViewController.h */; };
+		0A1B938315B84D490075DF88 /* ARDataEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1B938115B84D480075DF88 /* ARDataEntryViewController.m */; };
 		5605D9DD147172AD00EC6950 /* ARCredentialKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 5605D9DA147172AD00EC6950 /* ARCredentialKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5605D9DE147172AD00EC6950 /* ARCredentialKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605D9DB147172AD00EC6950 /* ARCredentialKeys.m */; };
 		5605D9F41471742800EC6950 /* NSString+AppRenaissance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5605D9F11471731300EC6950 /* NSString+AppRenaissance.m */; };
@@ -134,6 +136,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1B938015B84D480075DF88 /* ARDataEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDataEntryViewController.h; sourceTree = "<group>"; };
+		0A1B938115B84D480075DF88 /* ARDataEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDataEntryViewController.m; sourceTree = "<group>"; };
 		5605D9C81471723800EC6950 /* libARiOSUtilitiesConstants.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARiOSUtilitiesConstants.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5605D9CF1471723800EC6950 /* ARiOSUtilitiesConstants-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARiOSUtilitiesConstants-Prefix.pch"; sourceTree = "<group>"; };
 		5605D9DA147172AD00EC6950 /* ARCredentialKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCredentialKeys.h; sourceTree = "<group>"; };
@@ -333,6 +337,8 @@
 			children = (
 				566613DD14B506C00017FF48 /* ARAlertView.h */,
 				566613DE14B506C00017FF48 /* ARAlertView.m */,
+				0A1B938015B84D480075DF88 /* ARDataEntryViewController.h */,
+				0A1B938115B84D480075DF88 /* ARDataEntryViewController.m */,
 				5605DA50147176FF00EC6950 /* UIAlertView+ShowMessage.h */,
 				5605DA51147176FF00EC6950 /* UIAlertView+ShowMessage.m */,
 				5605DA54147177DF00EC6950 /* UIApplication+MainBundle.h */,
@@ -454,6 +460,7 @@
 				5605DA56147177DF00EC6950 /* UIApplication+MainBundle.h in Headers */,
 				56AD451314EABA3600DA056B /* UIView+Positioning.h in Headers */,
 				568E1C5B15AB25B30066AE27 /* UIColor+HexString.h in Headers */,
+				0A1B938215B84D490075DF88 /* ARDataEntryViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +640,7 @@
 				566613E014B506C00017FF48 /* ARAlertView.m in Sources */,
 				56AD451414EABA3600DA056B /* UIView+Positioning.m in Sources */,
 				568E1C5C15AB25B30066AE27 /* UIColor+HexString.m in Sources */,
+				0A1B938315B84D490075DF88 /* ARDataEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
