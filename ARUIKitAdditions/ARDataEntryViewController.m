@@ -267,7 +267,7 @@
 {
     UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                 target:self
-                                                                                action:@selector(handleDoneToolbarButtonClicked:)];
+                                                                                action:@selector(handleDoneToolbarButtonTap:)];
     return doneBarButtonItem;
 }
 
