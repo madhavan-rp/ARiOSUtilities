@@ -30,4 +30,8 @@
 - (void)disableControl:(UIControl *)control;
 - (void)enableControl:(UIControl *)control;
 
+- (void)handleNextToolbarButtonTap:(id)sender;
+- (void)handlePrevToolbarButtonTap:(id)sender;
+- (void)handleDoneToolbarButtonTap:(id)sender;
+
 @end
