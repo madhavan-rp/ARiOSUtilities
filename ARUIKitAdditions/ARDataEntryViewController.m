@@ -124,7 +124,7 @@
 }
 
 #pragma mark - Event Handler Helper Methods
-- (void)adjustScrollViewForInputViewSize:(CGSize)size
+- (void)adjustScrollViewForInputViewSize:(CGSize)inputViewSize
 {
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, inputViewSize.height, 0.0);
     self.scrollView.contentInset = contentInsets;
@@ -135,7 +135,7 @@
 {
     CGRect unobscuredFrame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - inputViewSize.height);
     CGPoint activeTextFieldBottomLeftPoint = CGPointMake(self.activeTextField.frame.origin.x,
-                                                         self.activeTextField.frame.origin + self.activeTextField.frame.size.height);
+                                                         self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height);
     return !CGRectContainsPoint(unobscuredFrame, activeTextFieldBottomLeftPoint);
 }
 
@@ -181,7 +181,6 @@
     // If the active text field is hidden by the keyboard and our content exists within a scroll view, scroll the content to make it visible.
     if (self.scrollView && [self isActiveTextFieldHiddenByInputViewWithSize:inputViewSize])
     {
-        CGFloat padding = self.textFieldVisibilityPadding;
         CGPoint scrollPoint = [self scrollPointForVisibleTextFieldWithInputViewSize:inputViewSize];
         [self.scrollView setContentOffset:scrollPoint animated:YES];
     }
@@ -241,7 +240,7 @@
 - (UIBarButtonItem*)previousButton
 {
     UIBarButtonItem* previousBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.previousBarButtonText
-                                                                              style:self.barButtonStyle
+                                                                              style:self.barButtonItemStyle
                                                                              target:self
                                                                              action:@selector(handlePrevToolbarButtonTap:)];
     return previousBarButtonItem;
@@ -250,7 +249,7 @@
 - (UIBarButtonItem*)nextButton
 {
     UIBarButtonItem* nextBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.nextBarButtonText
-                                                                              style:self.barButtonStyle
+                                                                              style:self.barButtonItemStyle
                                                                              target:self
                                                                              action:@selector(handleNextToolbarButtonTap:)];
     return nextBarButtonItem;
@@ -274,9 +273,10 @@
 
 - (UIToolbar*)inputFieldNavigationToolBar
 {
-    UIToolbar *toolbar = [UIToolbar alloc] initWithFrame:CGRectMake(self.activeTextField.frame.origin.x, self.activeTextField.frame.origin.y, self.activeTextField.frame.size.width, self.toolbarHeight);
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(self.activeTextField.frame.origin.x, self.activeTextField.frame.origin.y, self.activeTextField.frame.size.width, self.toolbarHeight)];
     toolbar.barStyle = self.toolbarStyle;
     toolbar.items = [NSArray arrayWithObjects:[self previousButton], [self nextButton], [self spacer], [self doneButton], nil];
+    return toolbar;
 }
 
 #pragma mark - UITextFieldDelegate

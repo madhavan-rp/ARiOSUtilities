@@ -13,8 +13,8 @@
 @property (strong, nonatomic) IBOutlet UIScrollView* scrollView;
 @property (strong, nonatomic) UITextField* activeTextField;
 @property (strong, nonatomic) UIGestureRecognizer* tapRecognizer;
-@property (strong, nonatomic) BOOL isInputViewShowing;
-@property (strong, nonatomic) BOOL shouldHideInputViewOnTapOutside;
+@property (assign, nonatomic) BOOL isInputViewShowing;
+@property (assign, nonatomic) BOOL shouldHideInputViewOnTapOutside;
 
 @property (assign, nonatomic) CGFloat disabledControlAlpha;
 @property (assign, nonatomic) CGFloat enabledControlAlpha;
@@ -23,13 +23,11 @@
 
 @property (strong, nonatomic) NSString* previousBarButtonText;
 @property (strong, nonatomic) NSString* nextBarButtonText;
-@property (strong, nonatomic) UIBarButtonItemStyle* barButtonItemStyle;
-@property (strong, nonatomic) UIBarStyle* toolbarStyle;
+@property (assign, nonatomic) UIBarButtonItemStyle barButtonItemStyle;
+@property (assign, nonatomic) UIBarStyle toolbarStyle;
 @property (assign, nonatomic) CGFloat toolbarHeight;
 
-- (void)layoutScrollView;
-
-- (void)disableControl:(UIControl *)control
+- (void)disableControl:(UIControl *)control;
 - (void)enableControl:(UIControl *)control;
 
 @end
