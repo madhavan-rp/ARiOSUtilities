@@ -232,7 +232,7 @@
 
 - (void)handlePrevToolbarButtonTap:(id)sender
 {
-    if ([self.activeTextField tag] > 2)
+    if ([self.activeTextField tag] < 2)
     {
         NSLog(@"ARDataEntryViewController Error: All data fields must have tags greater than or equal to 2 in order to avoid collisions with default tags.");
         [self.activeTextField resignFirstResponder];
