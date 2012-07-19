@@ -149,11 +149,12 @@
     CGPoint scrollPoint = CGPointMake(0.0,
                                       self.scrollView.frame.origin.y +
                                       activeTextFieldBottomY -
-                                      screenHeight - (statusBarHeight +
+                                      (screenHeight - (statusBarHeight +
                                                       navigationBarHeight +
                                                       self.scrollViewHeaderHeight +
+                                                      self.toolbarHeight +
                                                       inputViewSize.height +
-                                                      self.textFieldVisibilityPadding));
+                                                      self.textFieldVisibilityPadding)));
     return scrollPoint;
 }
 
