@@ -3,7 +3,7 @@
 //  ARiOSUtilities
 //
 //  Created by Kevin Jenkins on 7/19/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 appRenaissance, LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -24,7 +24,7 @@
 @property (strong, nonatomic) NSString* previousBarButtonText;
 @property (strong, nonatomic) NSString* nextBarButtonText;
 @property (strong, nonatomic) UIBarButtonItemStyle* barButtonItemStyle;
-@property (strong, nonatomic) UIBarStyle* toolbarStyle
+@property (strong, nonatomic) UIBarStyle* toolbarStyle;
 @property (assign, nonatomic) CGFloat toolbarHeight;
 
 - (void)layoutScrollView;
