@@ -138,7 +138,8 @@
 
 - (BOOL)isActiveTextFieldHiddenByInputViewWithSize:(CGSize)inputViewSize
 {
-    CGRect unobscuredFrame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - inputViewSize.height - self.inputAccessoryView.frame.size.height);
+    CGRect screen = [UIScreen mainScreen].bounds;
+    CGRect unobscuredFrame = CGRectMake(screen.origin.x, screen.origin.y, self.view.frame.size.width, self.view.frame.size.height - inputViewSize.height - self.inputAccessoryView.frame.size.height);
     CGPoint activeTextFieldBottomLeftPoint = CGPointMake(self.activeTextField.frame.origin.x,
                                                          self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height);
     return !CGRectContainsPoint(unobscuredFrame, activeTextFieldBottomLeftPoint);
@@ -154,9 +155,9 @@
                                       self.scrollView.frame.origin.y +
                                       activeTextFieldBottomY -
                                       (screenHeight - (navigationBarHeight +
-                                                      self.scrollViewHeaderHeight +
-                                                      inputViewSize.height +
-                                                      self.textFieldVisibilityPadding)));
+                                                       self.scrollViewHeaderHeight +
+                                                       inputViewSize.height +
+                                                       self.textFieldVisibilityPadding)));
     return scrollPoint;
 }
 
@@ -231,6 +232,12 @@
 
 - (void)handlePrevToolbarButtonTap:(id)sender
 {
+    if ([self.activeTextField tag] > 2)
+    {
+        NSLog(@"ARDataEntryViewController Error: All data fields must have tags greater than or equal to 2 in order to avoid collisions with default tags.");
+        [self.activeTextField resignFirstResponder];
+        return;
+    }
     [self activateResponderWithTag:self.activeTextField.tag - 1 withIncrement:-1];
 }
 
