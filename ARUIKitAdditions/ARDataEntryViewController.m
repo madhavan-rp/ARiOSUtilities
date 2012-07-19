@@ -138,7 +138,7 @@
 
 - (BOOL)isActiveTextFieldHiddenByInputViewWithSize:(CGSize)inputViewSize
 {
-    CGRect unobscuredFrame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - inputViewSize.height);
+    CGRect unobscuredFrame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - inputViewSize.height - self.inputAccessoryView.frame.size.height);
     CGPoint activeTextFieldBottomLeftPoint = CGPointMake(self.activeTextField.frame.origin.x,
                                                          self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height);
     return !CGRectContainsPoint(unobscuredFrame, activeTextFieldBottomLeftPoint);
