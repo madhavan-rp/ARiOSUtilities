@@ -148,16 +148,13 @@
 {
     CGFloat activeTextFieldBottomY = self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height;
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
 
     CGPoint scrollPoint = CGPointMake(0.0,
                                       self.scrollView.frame.origin.y +
                                       activeTextFieldBottomY -
-                                      (screenHeight - (statusBarHeight +
-                                                      navigationBarHeight +
+                                      (screenHeight - (navigationBarHeight +
                                                       self.scrollViewHeaderHeight +
-                                                      self.toolbarHeight +
                                                       inputViewSize.height +
                                                       self.textFieldVisibilityPadding)));
     return scrollPoint;
