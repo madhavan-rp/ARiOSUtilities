@@ -9,6 +9,9 @@
 #import "ARDataEntryViewController.h"
 
 @interface ARDataEntryViewController ()
+
+@property (assign, nonatomic) BOOL isTransitioningToNewActiveTextField;
+
 - (void)handleNextToolbarButtonTap:(id)sender;
 - (void)handlePrevToolbarButtonTap:(id)sender;
 - (void)handleDoneToolbarButtonTap:(id)sender;
@@ -32,6 +35,7 @@
 @synthesize barButtonItemStyle = _barButtonItemStyle;
 @synthesize toolbarHeight = _toolbarHeight;
 @synthesize toolbarStyle = _toolbarStyle;
+@synthesize isTransitioningToNewActiveTextField = _isTransitioningToNewActiveTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +61,7 @@
     self.barButtonItemStyle = UIBarButtonItemStyleBordered;
     self.toolbarHeight = 30.0f;
     self.toolbarStyle = UIBarStyleBlackTranslucent;
+    self.isTransitioningToNewActiveTextField = NO;
 }
 - (void)addHideInputViewGesture
 {
@@ -164,6 +169,7 @@
 #pragma mark - Keyboard Event Handlers
 - (void)handleHideInputView:(id)sender
 {
+    self.isTransitioningToNewActiveTextField = NO;
     [self.activeTextField resignFirstResponder];
 }
 
@@ -197,7 +203,7 @@
     self.isInputViewShowing = NO;
 
     // Adjust the scroll view content to compensate for the lack of keyboard.
-    if (self.scrollView)
+    if (self.scrollView && !self.isTransitioningToNewActiveTextField)
     {
         self.scrollView.contentInset = UIEdgeInsetsZero;
         self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero;
@@ -211,10 +217,13 @@
     UIResponder* nextResponder = [[self.activeTextField superview] viewWithTag:tag];
     if (nextResponder && [nextResponder canBecomeFirstResponder])
     {
+        self.isTransitioningToNewActiveTextField = YES;
         [self.activeTextField resignFirstResponder];
         [nextResponder becomeFirstResponder];
         return;
     }
+
+    self.isTransitioningToNewActiveTextField = NO;
 
     if (nextResponder)
     {
@@ -243,6 +252,7 @@
 
 - (void)handleDoneToolbarButtonTap:(id)sender
 {
+    self.isTransitioningToNewActiveTextField = NO;
     [self.activeTextField resignFirstResponder];
 }
 
@@ -259,9 +269,9 @@
 - (UIBarButtonItem*)nextButton
 {
     UIBarButtonItem* nextBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.nextBarButtonText
-                                                                              style:self.barButtonItemStyle
-                                                                             target:self
-                                                                             action:@selector(handleNextToolbarButtonTap:)];
+                                                                          style:self.barButtonItemStyle
+                                                                         target:self
+                                                                         action:@selector(handleNextToolbarButtonTap:)];
     return nextBarButtonItem;
 }
 
@@ -276,8 +286,8 @@
 - (UIBarButtonItem*)doneButton
 {
     UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                target:self
-                                                                                action:@selector(handleDoneToolbarButtonTap:)];
+                                                                                       target:self
+                                                                                       action:@selector(handleDoneToolbarButtonTap:)];
     return doneBarButtonItem;
 }
 
