@@ -44,7 +44,7 @@
 - (void) setupWithDefaults
 {
     self.isReleased = NO;
-    self.alpha = 0.0055; //  "speed damping" this can override the bouncing. .5 is very strong
+    self.alpha = 0.055; //  "speed damping" this can override the bouncing. .5 is very strong
     self.omega = 0.08; // "bounciness" .5 is SUPER bouncy.
     self.durationRelease = 2.0f;
     self.durationReset = 0.35f;
