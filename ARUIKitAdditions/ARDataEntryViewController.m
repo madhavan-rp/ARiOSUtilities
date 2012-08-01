@@ -9,12 +9,10 @@
 #import "ARDataEntryViewController.h"
 
 @interface ARDataEntryViewController ()
-
-@property (assign, nonatomic) BOOL isTransitioningToNewActiveTextField;
-
 - (void)handleNextToolbarButtonTap:(id)sender;
 - (void)handlePrevToolbarButtonTap:(id)sender;
 - (void)handleDoneToolbarButtonTap:(id)sender;
+- (CGRect)activeTextFieldFrameWithPaddingForInputViewSize:(CGSize)inputViewSize;
 @end
 
 @implementation ARDataEntryViewController
@@ -35,7 +33,6 @@
 @synthesize barButtonItemStyle = _barButtonItemStyle;
 @synthesize toolbarHeight = _toolbarHeight;
 @synthesize toolbarStyle = _toolbarStyle;
-@synthesize isTransitioningToNewActiveTextField = _isTransitioningToNewActiveTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -61,7 +58,6 @@
     self.barButtonItemStyle = UIBarButtonItemStyleBordered;
     self.toolbarHeight = 30.0f;
     self.toolbarStyle = UIBarStyleBlackTranslucent;
-    self.isTransitioningToNewActiveTextField = NO;
 }
 - (void)addHideInputViewGesture
 {
@@ -78,14 +74,16 @@
 - (void)addKeyboardNotifications
 {
     /* Input views such as the keyboard and picker both use the UIKeyboard... series of keys */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInputViewWillShow:) name: UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInputViewWillHide:) name: UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInputViewDidShow:) name: UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInputViewDidHide:) name: UIKeyboardDidHideNotification object:nil];
 }
 
 - (void)removeKeyboardNotifications
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
 }
 
 #pragma mark - UIView Lifecycle
@@ -134,85 +132,67 @@
 }
 
 #pragma mark - Event Handler Helper Methods
-- (void)adjustScrollViewForInputViewSize:(CGSize)inputViewSize
+- (void)handleHideInputView:(id)sender
 {
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, inputViewSize.height, 0.0);
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
+    [self.activeTextField resignFirstResponder];
 }
-
-- (BOOL)isActiveTextFieldHiddenByInputViewWithSize:(CGSize)inputViewSize
-{
-    CGRect screen = [UIScreen mainScreen].bounds;
-    CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
-    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
-    CGRect unobscuredFrame = CGRectMake(screen.origin.x, screen.origin.y + navigationBarHeight + statusBarHeight,
-                                        self.view.frame.size.width, self.view.frame.size.height - inputViewSize.height - self.inputAccessoryView.frame.size.height);
-    CGPoint activeTextFieldBottomLeftPoint = CGPointMake(self.activeTextField.frame.origin.x,
-                                                         self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height + navigationBarHeight + statusBarHeight);
-    return !CGRectContainsPoint(unobscuredFrame, activeTextFieldBottomLeftPoint);
-}
-
-- (CGPoint)scrollPointForVisibleTextFieldWithInputViewSize:(CGSize)inputViewSize
+- (CGRect)activeTextFieldFrameWithPaddingForInputViewSize:(CGSize)inputViewSize
 {
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
-    CGFloat activeTextFieldBottomY = self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height + navigationBarHeight + statusBarHeight;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
 
+    return CGRectMake(self.activeTextField.frame.origin.x,
+                      self.activeTextField.frame.origin.y,
+                      self.activeTextField.frame.size.width,
+                      self.activeTextField.frame.size.height - (self.activeTextField.frame.size.height/2.0) + (inputViewSize.height/2.0) - navigationBarHeight - statusBarHeight + self.activeTextField.inputAccessoryView.frame.size.height);
+}
+- (void)adjustScrollViewForHeightChange:(CGFloat)heightChange
+{
+    CGRect scrollViewFrame = self.scrollView.frame;
 
-    CGPoint scrollPoint = CGPointMake(0.0,
-                                      self.scrollView.frame.origin.y +
-                                      activeTextFieldBottomY -
-                                      (screenHeight - (self.scrollViewHeaderHeight +
-                                                       inputViewSize.height +
-                                                       self.textFieldVisibilityPadding)));
-    return scrollPoint;
+    scrollViewFrame.size.height += heightChange; // may need to account for tabBar
+
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:0.3];
+    [self.scrollView setFrame:scrollViewFrame];
+    [UIView commitAnimations];
+
 }
 
 #pragma mark - Keyboard Event Handlers
-- (void)handleHideInputView:(id)sender
+- (void)handleInputViewWillHide:(NSNotification*)notification
 {
-    self.isTransitioningToNewActiveTextField = NO;
-    [self.activeTextField resignFirstResponder];
+    NSDictionary *userInfo = [notification userInfo];
+
+    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+
+    [self adjustScrollViewForHeightChange:keyboardSize.height];
+
+    self.isInputViewShowing = NO;
 }
 
-- (void)handleInputViewDidShow:(NSNotification*)notification
+- (void)handleInputViewWillShow:(NSNotification*)notification
 {
     if (self.isInputViewShowing) return;
 
+    NSDictionary *userInfo = [notification userInfo];
+
+    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+
+    [self adjustScrollViewForHeightChange:-keyboardSize.height];
+
+    [self.activeTextField becomeFirstResponder];
+
     self.isInputViewShowing = YES;
-
-    NSDictionary* inputViewInformation = [notification userInfo];
-    CGSize inputViewSize = [[inputViewInformation objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-
-    // If a scroll view exists, adjust the content to compensate for the keyboard
-    if (self.scrollView)
-    {
-        [self adjustScrollViewForInputViewSize:inputViewSize];
-    }
-
-    // If the active text field is hidden by the keyboard and our content exists within a scroll view, scroll the content to make it visible.
-    if (self.scrollView && [self isActiveTextFieldHiddenByInputViewWithSize:inputViewSize])
-    {
-        CGPoint scrollPoint = [self scrollPointForVisibleTextFieldWithInputViewSize:inputViewSize];
-        [self.scrollView setContentOffset:scrollPoint animated:YES];
-    }
 }
-
-- (void)handleInputViewDidHide:(id)sender
+- (void)handleInputViewDidShow:(NSNotification*)notification
 {
-    if (!self.isInputViewShowing) return;
+    NSDictionary *userInfo = [notification userInfo];
 
-    self.isInputViewShowing = NO;
+    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
 
-    // Adjust the scroll view content to compensate for the lack of keyboard.
-    if (self.scrollView && !self.isTransitioningToNewActiveTextField)
-    {
-        self.scrollView.contentInset = UIEdgeInsetsZero;
-        self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero;
-    }
-
+    [self.scrollView scrollRectToVisible:[self activeTextFieldFrameWithPaddingForInputViewSize:keyboardSize] animated:YES];
 }
 
 #pragma mark - Custom Toolbar Event Handlers
@@ -221,13 +201,9 @@
     UIResponder* nextResponder = [[self.activeTextField superview] viewWithTag:tag];
     if (nextResponder && [nextResponder canBecomeFirstResponder])
     {
-        self.isTransitioningToNewActiveTextField = YES;
-        [self.activeTextField resignFirstResponder];
         [nextResponder becomeFirstResponder];
         return;
     }
-
-    self.isTransitioningToNewActiveTextField = NO;
 
     if (nextResponder)
     {
@@ -256,7 +232,6 @@
 
 - (void)handleDoneToolbarButtonTap:(id)sender
 {
-    self.isTransitioningToNewActiveTextField = NO;
     [self.activeTextField resignFirstResponder];
 }
 
