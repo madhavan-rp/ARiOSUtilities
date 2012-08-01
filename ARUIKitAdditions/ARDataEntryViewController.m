@@ -9,6 +9,9 @@
 #import "ARDataEntryViewController.h"
 
 @interface ARDataEntryViewController ()
+
+@property (assign, nonatomic) BOOL isTransitioningToNewActiveTextField;
+
 - (void)handleNextToolbarButtonTap:(id)sender;
 - (void)handlePrevToolbarButtonTap:(id)sender;
 - (void)handleDoneToolbarButtonTap:(id)sender;
@@ -32,6 +35,7 @@
 @synthesize barButtonItemStyle = _barButtonItemStyle;
 @synthesize toolbarHeight = _toolbarHeight;
 @synthesize toolbarStyle = _toolbarStyle;
+@synthesize isTransitioningToNewActiveTextField = _isTransitioningToNewActiveTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +61,7 @@
     self.barButtonItemStyle = UIBarButtonItemStyleBordered;
     self.toolbarHeight = 30.0f;
     self.toolbarStyle = UIBarStyleBlackTranslucent;
+    self.isTransitioningToNewActiveTextField = NO;
 }
 - (void)addHideInputViewGesture
 {
@@ -139,23 +144,27 @@
 - (BOOL)isActiveTextFieldHiddenByInputViewWithSize:(CGSize)inputViewSize
 {
     CGRect screen = [UIScreen mainScreen].bounds;
-    CGRect unobscuredFrame = CGRectMake(screen.origin.x, screen.origin.y, self.view.frame.size.width, self.view.frame.size.height - inputViewSize.height - self.inputAccessoryView.frame.size.height);
+    CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
+    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    CGRect unobscuredFrame = CGRectMake(screen.origin.x, screen.origin.y + navigationBarHeight + statusBarHeight,
+                                        self.view.frame.size.width, self.view.frame.size.height - inputViewSize.height - self.inputAccessoryView.frame.size.height);
     CGPoint activeTextFieldBottomLeftPoint = CGPointMake(self.activeTextField.frame.origin.x,
-                                                         self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height);
+                                                         self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height + navigationBarHeight + statusBarHeight);
     return !CGRectContainsPoint(unobscuredFrame, activeTextFieldBottomLeftPoint);
 }
 
 - (CGPoint)scrollPointForVisibleTextFieldWithInputViewSize:(CGSize)inputViewSize
 {
-    CGFloat activeTextFieldBottomY = self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
+    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    CGFloat activeTextFieldBottomY = self.activeTextField.frame.origin.y + self.activeTextField.frame.size.height + navigationBarHeight + statusBarHeight;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+
 
     CGPoint scrollPoint = CGPointMake(0.0,
                                       self.scrollView.frame.origin.y +
                                       activeTextFieldBottomY -
-                                      (screenHeight - (navigationBarHeight +
-                                                       self.scrollViewHeaderHeight +
+                                      (screenHeight - (self.scrollViewHeaderHeight +
                                                        inputViewSize.height +
                                                        self.textFieldVisibilityPadding)));
     return scrollPoint;
@@ -164,6 +173,7 @@
 #pragma mark - Keyboard Event Handlers
 - (void)handleHideInputView:(id)sender
 {
+    self.isTransitioningToNewActiveTextField = NO;
     [self.activeTextField resignFirstResponder];
 }
 
@@ -197,7 +207,7 @@
     self.isInputViewShowing = NO;
 
     // Adjust the scroll view content to compensate for the lack of keyboard.
-    if (self.scrollView)
+    if (self.scrollView && !self.isTransitioningToNewActiveTextField)
     {
         self.scrollView.contentInset = UIEdgeInsetsZero;
         self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero;
@@ -211,10 +221,13 @@
     UIResponder* nextResponder = [[self.activeTextField superview] viewWithTag:tag];
     if (nextResponder && [nextResponder canBecomeFirstResponder])
     {
+        self.isTransitioningToNewActiveTextField = YES;
         [self.activeTextField resignFirstResponder];
         [nextResponder becomeFirstResponder];
         return;
     }
+
+    self.isTransitioningToNewActiveTextField = NO;
 
     if (nextResponder)
     {
@@ -232,7 +245,7 @@
 
 - (void)handlePrevToolbarButtonTap:(id)sender
 {
-    if ([self.activeTextField tag] > 2)
+    if ([self.activeTextField tag] < 2)
     {
         NSLog(@"ARDataEntryViewController Error: All data fields must have tags greater than or equal to 2 in order to avoid collisions with default tags.");
         [self.activeTextField resignFirstResponder];
@@ -243,6 +256,7 @@
 
 - (void)handleDoneToolbarButtonTap:(id)sender
 {
+    self.isTransitioningToNewActiveTextField = NO;
     [self.activeTextField resignFirstResponder];
 }
 
@@ -259,9 +273,9 @@
 - (UIBarButtonItem*)nextButton
 {
     UIBarButtonItem* nextBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.nextBarButtonText
-                                                                              style:self.barButtonItemStyle
-                                                                             target:self
-                                                                             action:@selector(handleNextToolbarButtonTap:)];
+                                                                          style:self.barButtonItemStyle
+                                                                         target:self
+                                                                         action:@selector(handleNextToolbarButtonTap:)];
     return nextBarButtonItem;
 }
 
@@ -276,8 +290,8 @@
 - (UIBarButtonItem*)doneButton
 {
     UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                target:self
-                                                                                action:@selector(handleDoneToolbarButtonTap:)];
+                                                                                       target:self
+                                                                                       action:@selector(handleDoneToolbarButtonTap:)];
     return doneBarButtonItem;
 }
 
