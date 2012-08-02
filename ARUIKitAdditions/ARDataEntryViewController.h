@@ -11,6 +11,7 @@
 @interface ARDataEntryViewController : UIViewController<UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView* scrollView;
+@property (strong, nonatomic) IBOutlet UIView* contentView;
 @property (strong, nonatomic) UITextField* activeTextField;
 @property (strong, nonatomic) UIGestureRecognizer* tapRecognizer;
 @property (assign, nonatomic) BOOL isInputViewShowing;

@@ -18,6 +18,7 @@
 @implementation ARDataEntryViewController
 
 @synthesize scrollView = _scrollView;
+@synthesize contentView = _contentView;
 @synthesize activeTextField = _activeTextField;
 @synthesize tapRecognizer = _tapRecognizer;
 @synthesize isInputViewShowing = _isInputViewShowing;
@@ -38,7 +39,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
     }
     return self;
 }
@@ -47,7 +48,7 @@
 - (void)doSetupWithDefaultValues
 {
     self.shouldHideInputViewOnTapOutside = YES;
-
+    
     // default values
     self.disabledControlAlpha = 0.25f;
     self.enabledControlAlpha = 1.0f;
@@ -140,77 +141,81 @@
 {
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
-
-    return CGRectMake(self.activeTextField.frame.origin.x,
-                      self.activeTextField.frame.origin.y,
-                      self.activeTextField.frame.size.width,
-                      self.activeTextField.frame.size.height - (self.activeTextField.frame.size.height/2.0) + (inputViewSize.height/2.0) - navigationBarHeight - statusBarHeight + self.activeTextField.inputAccessoryView.frame.size.height);
+    
+    CGRect frameInScrollView = [self.activeTextField.superview convertRect:self.activeTextField.frame toView:self.contentView];
+    
+    return CGRectMake(frameInScrollView.origin.x,
+                      frameInScrollView.origin.y,
+                      frameInScrollView.size.width,
+                      frameInScrollView.size.height - (frameInScrollView.size.height/2.0) + (inputViewSize.height/2.0) - navigationBarHeight - statusBarHeight + self.activeTextField.inputAccessoryView.frame.size.height);
 }
 - (void)adjustScrollViewForHeightChange:(CGFloat)heightChange
 {
     CGRect scrollViewFrame = self.scrollView.frame;
-
-    scrollViewFrame.size.height += heightChange; // may need to account for tabBar
-
+    
+    scrollViewFrame.size.height += heightChange;
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:0.3];
     [self.scrollView setFrame:scrollViewFrame];
     [UIView commitAnimations];
-
 }
 
 #pragma mark - Keyboard Event Handlers
 - (void)handleInputViewWillHide:(NSNotification*)notification
 {
     NSDictionary *userInfo = [notification userInfo];
-
+    
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-
-    [self adjustScrollViewForHeightChange:keyboardSize.height];
-
+    CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
+    
+    [self adjustScrollViewForHeightChange:keyboardSize.height-tabBarHeight];
+    
     self.isInputViewShowing = NO;
 }
 
 - (void)handleInputViewWillShow:(NSNotification*)notification
 {
     if (self.isInputViewShowing) return;
-
+    
     NSDictionary *userInfo = [notification userInfo];
-
+    
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-
-    [self adjustScrollViewForHeightChange:-keyboardSize.height];
-
+    CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
+    
+    [self adjustScrollViewForHeightChange:-(keyboardSize.height - tabBarHeight)];
+    
     [self.activeTextField becomeFirstResponder];
-
-    self.isInputViewShowing = YES;
+    
 }
 - (void)handleInputViewDidShow:(NSNotification*)notification
 {
+    if (self.isInputViewShowing) return;
     NSDictionary *userInfo = [notification userInfo];
-
+    
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-
-    [self.scrollView scrollRectToVisible:[self activeTextFieldFrameWithPaddingForInputViewSize:keyboardSize] animated:YES];
+    CGRect activeTextFieldAndPadding = [self activeTextFieldFrameWithPaddingForInputViewSize:keyboardSize];
+    
+    [self.scrollView scrollRectToVisible:activeTextFieldAndPadding animated:YES];
+    self.isInputViewShowing = YES;
 }
 
 #pragma mark - Custom Toolbar Event Handlers
 - (void)activateResponderWithTag:(NSInteger)tag withIncrement:(NSInteger)increment
 {
-    UIResponder* nextResponder = [[self.activeTextField superview] viewWithTag:tag];
+    UIResponder* nextResponder = [self.contentView viewWithTag:tag];
     if (nextResponder && [nextResponder canBecomeFirstResponder])
     {
         [nextResponder becomeFirstResponder];
         return;
     }
-
     if (nextResponder)
     {
         [self activateResponderWithTag:tag+increment withIncrement:increment];
         return;
     }
-
+    
     [self.activeTextField resignFirstResponder];
 }
 
