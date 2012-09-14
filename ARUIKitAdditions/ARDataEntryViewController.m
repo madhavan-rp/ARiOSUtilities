@@ -48,7 +48,7 @@
 - (void)doSetupWithDefaultValues
 {
     self.shouldHideInputViewOnTapOutside = YES;
-    
+
     // default values
     self.disabledControlAlpha = 0.25f;
     self.enabledControlAlpha = 1.0f;
@@ -141,9 +141,9 @@
 {
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
-    
+
     CGRect frameInScrollView = [self.activeTextField.superview convertRect:self.activeTextField.frame toView:self.contentView];
-    
+
     return CGRectMake(frameInScrollView.origin.x,
                       frameInScrollView.origin.y,
                       frameInScrollView.size.width,
@@ -152,9 +152,9 @@
 - (void)adjustScrollViewForHeightChange:(CGFloat)heightChange
 {
     CGRect scrollViewFrame = self.scrollView.frame;
-    
+
     scrollViewFrame.size.height += heightChange;
-    
+
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:0.3];
@@ -166,37 +166,37 @@
 - (void)handleInputViewWillHide:(NSNotification*)notification
 {
     NSDictionary *userInfo = [notification userInfo];
-    
+
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
-    
+
     [self adjustScrollViewForHeightChange:keyboardSize.height-tabBarHeight];
-    
+
     self.isInputViewShowing = NO;
 }
 
 - (void)handleInputViewWillShow:(NSNotification*)notification
 {
     if (self.isInputViewShowing) return;
-    
+
     NSDictionary *userInfo = [notification userInfo];
-    
+
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
-    
+
     [self adjustScrollViewForHeightChange:-(keyboardSize.height - tabBarHeight)];
-    
+
     [self.activeTextField becomeFirstResponder];
-    
+
 }
 - (void)handleInputViewDidShow:(NSNotification*)notification
 {
     if (self.isInputViewShowing) return;
     NSDictionary *userInfo = [notification userInfo];
-    
+
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     CGRect activeTextFieldAndPadding = [self activeTextFieldFrameWithPaddingForInputViewSize:keyboardSize];
-    
+
     [self.scrollView scrollRectToVisible:activeTextFieldAndPadding animated:YES];
     self.isInputViewShowing = YES;
 }
@@ -215,7 +215,7 @@
         [self activateResponderWithTag:tag+increment withIncrement:increment];
         return;
     }
-    
+
     [self.activeTextField resignFirstResponder];
 }
 
@@ -288,6 +288,18 @@
 {
     self.activeTextField = textField;
     self.activeTextField.inputAccessoryView = [self inputFieldNavigationToolBar];
+
+    UIView *superView = self.activeTextField.superview.superview;
+    if ([[[self.activeTextField superview] superview] isKindOfClass:[UITableViewCell class]])
+    {
+        UITableViewCell *tableViewCell = (UITableViewCell*)self.activeTextField.superview.superview;
+        UITableView *tableView = (UITableView*)tableViewCell.superview;
+        NSIndexPath *indexPath = [tableView indexPathForCell:tableViewCell];
+
+        CGRect frameInScrollView = [tableView convertRect:tableViewCell.frame toView:self.contentView];
+
+        [self.scrollView scrollRectToVisible:frameInScrollView animated:YES];
+    }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
