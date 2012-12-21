@@ -165,6 +165,7 @@
 #pragma mark - Keyboard Event Handlers
 - (void)handleInputViewWillHide:(NSNotification*)notification
 {
+    if (!self.isInputViewShowing) return;
     NSDictionary *userInfo = [notification userInfo];
 
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
